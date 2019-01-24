@@ -1,0 +1,19 @@
+@charset "UTF-8";
+.code {
+ display: block;
+ margin: 1em 0;
+ padding: 1em;
+ background-color: #eee;
+ font-size: 0.9rem;
+}
+
+[class^="language-"] {
+  display: block;
+  margin: 1em 0;
+  padding: 1em;
+  background-color: #333;
+  color: #fff;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: scroll;
+}
