@@ -8,60 +8,13 @@
   <section class="section about_sec" id="about">
     <div class="inner">
       <h2 class="cont_ttl"><span class="ttl_inner">About</span></h2>
-      <div class="profile_area about_area">
-        <h3 class="about_area_ttl">Profile</h3>
-        <div class="profile_img"><img src="<?php echo get_template_directory_uri(); ?>/images/img_mine.jpg" alt=""></div>
-        <div class="profile_content">
-          <dl class="about_list">
-            <dt class="about_label">Name</dt>
-            <dd class="about_txt">西村　依泰</dd>
-            <dt class="about_label">Birth/Age</dt>
-            <dd class="about_txt">１９８８.０４.０１／３０</dd>
-            <dt class="about_label">hobby</dt>
-            <dd class="about_txt">楽器（ピアノ・ギター）、推理小説、TVゲーム</dd>
-            <dt class="about_label">Like</dt>
-            <dd class="about_txt">コーヒー、甘味</dd>
-          </dl>
-        </div>
+      <div class="top_about_lead">
+        <p>Webクリエイター　西村依泰（yori3）のポートフォリオサイトです。</p>
+        <p>サイト名の「WeST」は「Web creator's Study and Try」の略で、<br>このサイトを通して、Web制作に関する知識や技術を学び、<br>共有していくことを目的としています。</p>
+        <p>ブログなどを通して、新しく知ったことや、実践したことを発信し、<br>また、様々な情報を収集していき、<br>Webクリエイターとしての発展を目指しています。</p>
       </div>
 
-      <div class="skill_area about_area">
-        <h3 class="about_area_ttl">Skill</h3>
-        <div class="skill_content">
-          <h3 class="about_box_ttl">Tools</h3>
-          <dl class="about_list">
-            <dt class="about_label">Photoshop</dt>
-            <dd class="about_txt">★★★★</dd>
-            <dt class="about_label">Illustrator</dt>
-            <dd class="about_txt">★★</dd>
-            <dt class="about_label">Dreamweaver</dt>
-            <dd class="about_txt">★★★★</dd>
-            <dt class="about_label">Atom</dt>
-            <dd class="about_txt">★★★★</dd>
-            <dt class="about_label">Google Analytics</dt>
-            <dd class="about_txt">★★★</dd>
-            <dt class="about_label">Github</dt>
-            <dd class="about_txt">★★</dd>
-          </dl>
-        </div>
-        <div class="skill_content">
-          <h3 class="about_box_ttl">Language</h3>
-          <dl class="about_list">
-            <dt class="about_label">HTML</dt>
-            <dd class="about_txt">★★★★</dd>
-            <dt class="about_label">CSS</dt>
-            <dd class="about_txt">★★★★★</dd>
-            <dt class="about_label">jQuery</dt>
-            <dd class="about_txt">★★★★</dd>
-            <dt class="about_label">PHP</dt>
-            <dd class="about_txt">★★★</dd>
-            <dt class="about_label">WordPress</dt>
-            <dd class="about_txt">★★★★</dd>
-          </dl>
-        </div>
-      </div>
-
-
+      <div class="btn btn_more"><a href="<?php echo home_url(); ?>/about/" class="btn_body">詳しいプロフィールを見る</a></div>
     </div>
   </section>
 

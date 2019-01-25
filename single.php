@@ -1,6 +1,6 @@
 <?php get_header(); ?>
-<?php breadcrumb(); ?>
 <main id="main" class="main">
+<?php breadcrumb(); ?>
 <article class="post_area">
 
 <?php

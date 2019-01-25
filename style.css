@@ -19,7 +19,7 @@ body, html {
   outline: 0;
   vertical-align: baseline;
   background: transparent;
-  color: #17191a;
+  color: #2e3033;
   font-size: 14px;
   letter-spacing: 0.08em;
   font-family: 'Hind Siliguri', "Noto Sans Japanese", sans-serif;
@@ -150,7 +150,7 @@ button {
   width: 100%;
   height: 30px;
   padding: .5em;
-  border: 1px solid #ccc;
+  border: 1px solid #c2c5cc;
   font-size: 1em;
 }
 
@@ -177,6 +177,7 @@ button {
 
 .site_logo {
   width: 120px;
+  height: 100%;
 }
 
 .site_logo svg {
@@ -226,7 +227,7 @@ button {
   top: 0;
   width: 50px;
   height: 50px;
-  background-color: #0e2f33;
+  background-color: #3A4F78;
   pointer-events: all;
 }
 
@@ -347,10 +348,9 @@ button {
   display: block;
   padding: 20px 4%;
   border-bottom: 1px solid #fff;
-  background-color: #0e2f33;
+  background-color: #3A4F78;
   color: #fff;
   font-size: 1rem;
-  font-family: "PixelMplus10", sans-serif;
   line-height: 1.3;
 }
 
@@ -385,13 +385,44 @@ button {
     transform: rotateY(0);
   }
   .gnav_body {
-    padding: 0 0 0 1em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    padding: 0 0.5em 0 0.5em;
     border-bottom: none;
     background-color: transparent;
     font-size: 1rem;
   }
   .gnav_item:first-child .gnav_body {
     border-top: none;
+  }
+  .gnav_body::after {
+    display: block;
+    position: absolute;
+    left: 0.5em;
+    bottom: -0.2em;
+    width: calc(100% - 1em);
+    height: 2px;
+    background-color: #8593ae;
+    -webkit-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: left top;
+    -ms-transform-origin: left top;
+    transform-origin: left top;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    content: "";
+  }
+  .gnav_body:hover::after {
+    -webkit-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    transform: scaleX(1);
   }
   .gnav.open .gnav_inner {
     background-color: rgba(0, 0, 0, 0);
@@ -419,7 +450,7 @@ button {
   width: 40px;
   height: 40px;
   border-radius: 5px;
-  background-color: rgba(49, 105, 113, 0.8);
+  background-color: rgba(94, 112, 147, 0.8);
   line-height: 55px;
   text-align: center;
 }
@@ -475,19 +506,18 @@ button {
 .breadcrumb {
   width: 93.75%;
   margin: 0 auto;
-  padding: 5px 0;
+  padding: 10px 0;
 }
 
 .breadcrumb li {
   display: inline-block;
   position: relative;
   margin-right: 1.5em;
-  font-family: "PixelMplus10", sans-serif;
   line-height: 1.3;
 }
 
 .breadcrumb li a {
-  color: #51838a;
+  color: #8593ae;
   text-decoration: underline;
 }
 
@@ -522,7 +552,7 @@ button {
 .section:nth-of-type(even),
 .blog .section,
 .category .section {
-  background-color: rgba(178, 203, 207, 0.2);
+  background-color: rgba(181, 190, 208, 0.2);
 }
 
 .inner {
@@ -533,9 +563,9 @@ button {
 
 .cont_ttl {
   margin-bottom: 30px;
-  color: #316971;
+  color: #5E7093;
   font-size: 2rem;
-  font-family: "Press Start 2P", sans-serif;
+  font-family: "Orbitron", sans-serif;
   text-align: center;
 }
 
@@ -556,10 +586,9 @@ button {
   position: relative;
   width: 100%;
   height: 60px;
-  background-color: #51838a;
+  background-color: #8593ae;
   color: #fff;
   font-size: 1.1rem;
-  font-family: "PixelMplus10", sans-serif;
 }
 
 .btn_body::after {
@@ -567,17 +596,19 @@ button {
   position: absolute;
   right: 4%;
   top: 50%;
+  font-size: 1.2em;
   font-weight: 900;
+  font-family: FontAwesome;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  content: "＞";
+  content: "\f105";
 }
 
 .btn_return::after {
   right: 0;
   left: 4%;
-  content: "＜";
+  content: "\f104";
 }
 
 .btn_more {
@@ -591,9 +622,9 @@ button {
 
 .kv {
   position: relative;
-  background-image: url(images/kv.jpg);
+  background-image: url(images/kv_coffee.jpg);
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center 30%;
   background-size: cover;
   line-height: 1;
   overflow: hidden;
@@ -606,7 +637,7 @@ button {
   top: 0;
   width: 100%;
   height: 100%;
-  background: #51838a;
+  background: #8593ae;
   z-index: -1;
   opacity: 0.8;
   content: "";
@@ -658,13 +689,16 @@ button {
     -webkit-transition: .5s;
     -o-transition: .5s;
     transition: .5s;
-    border: 1px solid #51838a;
+    border: 1px solid #8593ae;
     background-color: #fff;
-    color: #51838a;
+    color: #8593ae;
   }
   .btn_body:hover {
-    background-color: #51838a;
+    background-color: #8593ae;
     color: #fff;
+  }
+  .btn_more {
+    margin-top: 60px;
   }
   .btn_top {
     width: 300px;
@@ -705,12 +739,25 @@ button {
   font-weight: normal;
 }
 
+.top_about_lead {
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.75;
+}
+
+.top_about_lead p + p {
+  margin-top: 1.5em;
+}
+
 @media screen and (min-width: 640px) {
   .kv_home {
     height: 300px;
   }
   .kv_home .site_title {
     font-size: 7rem;
+  }
+  .top_about_lead {
+    font-size: 1.1rem;
   }
 }
 
@@ -756,20 +803,20 @@ button {
 }
 
 .side_box #twitter-widget-0 {
-  border: 1px solid #ccc !important;
+  border: 1px solid #c2c5cc !important;
   width: 93.75% !important;
   max-width: 430px !important;
 }
 
 .side_box ul li:first-child a {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #c2c5cc;
 }
 
 .side_box ul li a {
   display: block;
   position: relative;
   padding: 15px 5%;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #c2c5cc;
   font-size: 1rem;
   line-height: 1;
   text-align: left;
@@ -783,7 +830,7 @@ button {
   width: 0;
   height: 0;
   border: 7px solid transparent;
-  border-left: 7px solid #316971;
+  border-left: 7px solid #5E7093;
   content: "";
 }
 
@@ -794,14 +841,13 @@ button {
 .pagination {
   margin-top: 50px;
   text-align: center;
-  font-family: "PixelMplus10", sans-serif;
 }
 
 .pagination a.page-numbers {
   display: inline-block;
   position: relative;
   background: #fff;
-  border: solid 1px #51838a;
+  border: solid 1px #8593ae;
   padding: 12px 15px;
   margin: 0 2px;
   text-decoration: none;
@@ -814,7 +860,7 @@ button {
   top: 0;
   width: 100%;
   height: 100%;
-  color: #316971;
+  color: #5E7093;
   font-size: 1rem;
   font-family: FontAwesome;
   text-align: center;
@@ -822,17 +868,25 @@ button {
 }
 
 .pagination a.page-numbers.prev {
-  font-weight: bold;
+  color: #fff;
+}
+
+.pagination a.page-numbers.prev::after {
+  content: "\f053";
 }
 
 .pagination a.page-numbers.next {
-  font-weight: bold;
+  color: #fff;
+}
+
+.pagination a.page-numbers.next::after {
+  content: "\f054";
 }
 
 .pagination .current {
   display: inline-block;
-  background: #51838a;
-  border: solid 1px #51838a;
+  background: #8593ae;
+  border: solid 1px #8593ae;
   padding: 12px 15px;
   margin: 0 2px;
   color: #fff;
@@ -900,8 +954,8 @@ button {
     margin-left: 4%;
   }
   .side_box ul {
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
+    border-left: 1px solid #c2c5cc;
+    border-right: 1px solid #c2c5cc;
   }
   .side_box ul li {
     -webkit-transition: .3s;
@@ -909,7 +963,7 @@ button {
     transition: .3s;
   }
   .side_box ul li:hover {
-    background-color: #51838a;
+    background-color: #8593ae;
     color: #fff;
   }
   .side_box ul li:hover a::after {
@@ -928,8 +982,8 @@ button {
     line-height: 28px;
   }
   .pagination a.page-numbers:hover {
-    background-color: #51838a;
-    border-color: #51838a;
+    background-color: #8593ae;
+    border-color: #8593ae;
     color: #fff;
   }
   .pagination a.page-numbers:hover:after {
@@ -976,7 +1030,7 @@ button {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(133, 147, 174, 0.8);
   content: "";
 }
 
@@ -1023,7 +1077,7 @@ button {
 .post_content h2 {
   margin-bottom: 1.3em;
   padding-left: 1%;
-  border-left: 6px solid #51838a;
+  border-left: 6px solid #8593ae;
   font-size: 1.5rem;
   line-height: 1.3;
 }
@@ -1071,11 +1125,11 @@ button {
 
 .post_content .code::-webkit-scrollbar {
   height: 10px;
-  background: #ddd;
+  background: #c2c5cc;
 }
 
 .post_content .code::-webkit-scrollbar-corner {
-  background: #ddd;
+  background: #c2c5cc;
 }
 
 .post_content .code::-webkit-scrollbar-thumb {
@@ -1090,7 +1144,7 @@ button {
   border-left: none;
   padding-left: 0;
   font-size: 1.2rem;
-  font-family: "Press Start 2P", sans-serif;
+  font-family: "Orbitron", sans-serif;
 }
 
 .post_content .sharedaddy .sd-title::before {
@@ -1115,7 +1169,7 @@ button {
   .post_area {
     margin-bottom: 100px;
     padding-bottom: 40px;
-    border: 1px solid #ccc;
+    border: 1px solid #c2c5cc;
     -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
   }
@@ -1135,6 +1189,10 @@ button {
 }
 
 /* @media */
+.about {
+  font-family: "PixelMplus10", sans-serif;
+}
+
 .about_area {
   position: relative;
   padding: 40px 30px 30px;
@@ -1189,7 +1247,6 @@ button {
 .about_txt {
   padding-left: 1em;
   padding-bottom: 1.5em;
-  font-family: "PixelMplus10", sans-serif;
 }
 
 .about_txt:last-of-type {
@@ -1199,6 +1256,10 @@ button {
 .about_box_ttl {
   margin-bottom: 1.5em;
   font-size: 1.5rem;
+  font-family: "Press Start 2P", sans-serif;
+}
+
+.about .page_ttl {
   font-family: "Press Start 2P", sans-serif;
 }
 
@@ -1245,8 +1306,8 @@ button {
   }
   .profile_content {
     -webkit-box-flex: 1;
-    -ms-flex: 1 0 auto;
-    flex: 1 0 auto;
+    -ms-flex: 1 0 60%;
+    flex: 1 0 60%;
     padding-left: 5%;
   }
   .skill_content {
@@ -1281,7 +1342,7 @@ button {
 .work_doc_label {
   width: 7em;
   padding: 1em 1em 1em 0;
-  border-bottom: 2px solid #51838a;
+  border-bottom: 2px solid #8593ae;
   font-weight: bold;
   text-align: right;
 }
@@ -1289,7 +1350,7 @@ button {
 .work_doc_txt {
   width: calc(100% - 7em);
   padding: 1em;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid #c2c5cc;
 }
 
 .work_doc_txt .work_ttl {
@@ -1301,10 +1362,9 @@ button {
   margin-bottom: 10px;
   padding: 0.5em;
   border-radius: 5px;
-  background-color: #51838a;
+  background-color: #8593ae;
   color: #fff;
   font-size: 0.85rem;
-  font-family: "PixelMplus10", sans-serif;
 }
 
 .work_label_wrap {

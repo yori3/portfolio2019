@@ -8,27 +8,40 @@ Author: Yoriyasu Nishimura
 Author URI: http://yori3.heteml.jp/portfolio
 */
 
-// 青系
-// $mainColor: #9cb1c2;
-// $accentColor: #277cc2;
-// $bgColor: #aeb9c2;
-// $darkColor: #3d464d;
+//カフェオレ
+// $mainColor: #b38867;
+// $bgColor: rgba(#ddbc95,0.2);
+// $darkColor: #b38867;
+// $darkBgColor: #626d71;
+// $gray: #cdcdc0;
+// $textColor: #333;
 
-//茶系
-// $mainColor: #ac7738;
-// $bgColor: #ccb49e;
-// $darkColor: #665042;
-// $darkBgColor: #252422;
+// 平原
+$mainColor: #75b1a9;
+$bgColor: rgba(#A9D4CE,0.2);
+$darkColor: #4B9288;
+$darkBgColor: #2B776D;
+$gray: #c2cccb;
+$textColor: #2e3332;
 
-// 緑系
-$mainColor: #51838a;
-$bgColor: rgba(#b2cbcf,0.2);
-$darkColor: #316971;
-$darkBgColor: #0e2f33;
-$textColor: #17191a;
+//波
+// $mainColor: #66a5ad;
+// $bgColor: rgba(#c4dfe6,0.1);
+// $darkColor: #07575b;
+// $darkBgColor: #003b46;
+// $gray: #c2cbcc;
+// $textColor: #2e3233;
 
-$logoFont: 'Orbitron', sans-serif;
-$ttlFont: 'Press Start 2P', sans-serif;
+//ブルーグレー
+$mainColor: #8593ae;
+$bgColor: rgba(#B5BED0,0.2);
+$darkColor: #5E7093;
+$darkBgColor: #3A4F78;
+$gray: #c2c5cc;
+$textColor: #2e3033;
+
+$ttlFont: 'Orbitron', sans-serif;
+$pixelTtlFont: 'Press Start 2P', sans-serif;
 $pixelFont: 'PixelMplus10', sans-serif;
 
 /*************reset*********************/
@@ -160,7 +173,7 @@ button {
 				width: 100%;
 				height: 30px;
 				padding: .5em;
-				border: 1px solid #ccc;
+				border: 1px solid $gray;
 				font-size: 1em;
 			}
 			.screen-reader-text{
@@ -188,6 +201,7 @@ button {
 
 .site_logo{
 	width: 120px;
+	height: 100%;
 	svg{
 		width: 100%;
 		height: 100%;
@@ -307,7 +321,6 @@ button {
 		background-color: $darkBgColor;
 		color: #fff;
 		font-size: 1rem;
-		font-family: $pixelFont;
 		line-height: 1.3;
 		.gnav_item:first-child &{
 			border-top: 1px solid #fff;
@@ -334,12 +347,33 @@ button {
 			transform: rotateY(0);
 		}
 		&_body{
-			padding: 0 0 0 1em;
+			display: flex;
+			align-items: center;
+			position: relative;
+			padding: 0 0.5em 0 0.5em;
 			border-bottom: none;
 			background-color: transparent;
 			font-size: 1rem;
 			.gnav_item:first-child &{
 				border-top: none;
+			}
+			&::after{
+				display: block;
+				position: absolute;
+				left: 0.5em;
+				bottom: -0.2em;
+				width: calc(100% - 1em);
+				height: 2px;
+				background-color: $mainColor;
+				transform: scaleX(0);
+				transform-origin: left top;
+				transition: .5s;
+				content: "";
+			}
+			&:hover{
+				&::after{
+					transform: scaleX(1);
+				}
 			}
 		}
 		&.open{
@@ -423,12 +457,11 @@ button {
 .breadcrumb{
   width: 93.75%;
   margin: 0 auto;
-	padding: 5px 0;
+	padding: 10px 0;
   li{
     display: inline-block;
 		position: relative;
     margin-right: 1.5em;
-		font-family: $pixelFont;
 		line-height: 1.3;
     a{
       color: $mainColor;
@@ -497,15 +530,16 @@ button {
 		background-color: $mainColor;
 		color: #fff;
 		font-size: 1.1rem;
-		font-family: $pixelFont;
 		&::after{
 			display: block;
 			position: absolute;
 			right: 4%;
 			top: 50%;
+			font-size: 1.2em;
 			font-weight: 900;
+			font-family: FontAwesome;
 			transform: translateY(-50%);
-			content: "＞";
+			content: "\f105";
 		}
 	}
 
@@ -513,7 +547,7 @@ button {
 		&::after{
 			right: 0;
 			left: 4%;
-			content: "＜";
+			content: "\f104";
 		}
 	}
 }
@@ -529,9 +563,9 @@ button {
 
 .kv{
   position: relative;
-	background-image: url(images/kv.jpg);
+	background-image: url(images/kv_coffee.jpg);
 	background-repeat: no-repeat;
-	background-position: center center;
+	background-position: center 30%;
 	background-size: cover;
 	line-height: 1;
 	overflow: hidden;
@@ -559,7 +593,7 @@ button {
 .page_ttl{
 	color: #fff;
   font-size: 2.6rem;
-	font-family: $logoFont;
+	font-family: $ttlFont;
 	font-weight: bold;
   text-align: center;
 	text-shadow: 3px 3px 3px rgba(0,0,0,.5);
@@ -598,6 +632,10 @@ button {
 		}
 	}
 
+	.btn_more{
+		margin-top: 60px;
+	}
+
   .btn_top{
     width: 300px;
     margin: 50px auto 100px;
@@ -626,7 +664,7 @@ button {
 		width: 100%;
 		color: #fff;
 		font-size: 4rem;
-		font-family: $logoFont;
+		font-family: $ttlFont;
 	  text-shadow: 1px 1px 3px rgba(0,0,0,.5);
 	  line-height: 1;
 		transform: translateY(-50%);
@@ -639,6 +677,21 @@ button {
 	}
 }
 
+.top{
+	&_about{
+		&_lead{
+			font-size: 1rem;
+			text-align: center;
+			line-height: 1.75;
+			p{
+				&+p{
+					margin-top: 1.5em;
+				}
+			}
+		}
+	}
+}
+
 
 
 
@@ -647,6 +700,14 @@ button {
 		height: 300px;
 		.site_title{
 			font-size: 7rem;
+		}
+	}
+
+	.top{
+		&_about{
+			&_lead{
+				font-size: 1.1rem;
+			}
 		}
 	}
 }
@@ -695,7 +756,7 @@ button {
   text-align: center;
 	overflow: hidden;
   #twitter-widget-0{
-    border: 1px solid #ccc !important;
+    border: 1px solid $gray !important;
     width: 93.75% !important;
     max-width: 430px !important;
   }
@@ -703,14 +764,14 @@ button {
 		li{
 			&:first-child{
 				a{
-					border-top: 1px solid #ccc;
+					border-top: 1px solid $gray;
 				}
 			}
 			a{
 				display: block;
 			  position: relative;
 			  padding: 15px 5%;
-			  border-bottom: 1px solid #ccc;
+			  border-bottom: 1px solid $gray;
 			  font-size: 1rem;
 			  line-height: 1;
 			  text-align: left;
@@ -737,7 +798,6 @@ button {
 .pagination{
   margin-top: 50px;
   text-align: center;
-	font-family: $pixelFont;
   a.page-numbers{
     display: inline-block;
 		position: relative;
@@ -760,18 +820,16 @@ button {
 			line-height: 38px;
 		}
 		&.prev{
-			font-weight: bold;
-			// color: #fff;
-			// &::after{
-			// 	content: "\f053";
-			// }
+			color: #fff;
+			&::after{
+				content: "\f053";
+			}
 		}
 		&.next{
-			font-weight: bold;
-			// color: #fff;
-			// &::after{
-			// 	content: "\f054";
-			// }
+			color: #fff;
+			&::after{
+				content: "\f054";
+			}
 		}
   }
   .current{
@@ -843,8 +901,8 @@ button {
       margin-left: 4%;
     }
     ul{
-      border-left: 1px solid #ccc;
-      border-right: 1px solid #ccc;
+      border-left: 1px solid $gray;
+      border-right: 1px solid $gray;
       li{
         transition: .3s;
         &:hover{
@@ -910,7 +968,7 @@ button {
 			top: 0;
 			width: 100%;
 			height: 100%;
-			background-color: rgba(0,0,0,.6);
+			background-color: rgba($mainColor,.8);
 			content: "";
 		}
 		&_inner{
@@ -989,10 +1047,10 @@ button {
 			overflow: scroll;
 			&::-webkit-scrollbar{
 				height:10px;
-				background:#ddd;
+				background:$gray;
 			}
 			&::-webkit-scrollbar-corner{
-				background:#ddd;
+				background:$gray;
 			}
 			&::-webkit-scrollbar-thumb{
 				background:#666;
@@ -1031,7 +1089,7 @@ button {
 	  &_area{
 	    margin-bottom: 100px;
 	    padding-bottom: 40px;
-		  border: 1px solid #ccc;
+		  border: 1px solid $gray;
       box-shadow: 1px 1px 10px rgba(0,0,0,.3);
 	  }
 
@@ -1055,6 +1113,7 @@ button {
 
 //自己紹介
 .about{
+	font-family: $pixelFont;
 	&_area{
 		position: relative;
 		padding: 40px 30px 30px;
@@ -1087,7 +1146,7 @@ button {
 			padding: 0 0.5em;
 			background-color: #333;
 			font-size: 1.5rem;
-			font-family: $ttlFont;
+			font-family: $pixelTtlFont;
 			text-align: center;
 			transform: translate(-50%, 0%);
 			z-index: 1;
@@ -1095,12 +1154,11 @@ button {
 	}
 	&_label{
 		padding-bottom: .5em;
-		font-family: $ttlFont;
+		font-family: $pixelTtlFont;
 	}
 	&_txt{
 		padding-left: 1em;
 		padding-bottom: 1.5em;
-		font-family: $pixelFont;
 		&:last-of-type{
 			padding-bottom: 0;
 		}
@@ -1109,8 +1167,12 @@ button {
 		&_ttl{
 			margin-bottom: 1.5em;
 			font-size: 1.5rem;
-			font-family: $ttlFont;
+			font-family: $pixelTtlFont;
 		}
+	}
+
+	.page_ttl{
+		font-family: $pixelTtlFont;
 	}
 }
 
@@ -1158,7 +1220,7 @@ button {
 			margin-bottom: 0;
 		}
 		&_content{
-			flex: 1 0 auto;
+			flex: 1 0 60%;
 			padding-left: 5%;
 		}
 	}
@@ -1183,25 +1245,6 @@ button {
 .work{
 	&_item{
 		margin-bottom: 30px;
-
-		// position: relative;
-		// padding: 40px 30px 30px;
-		// border-radius: 5px;
-		// background-color: #333;
-		// color: #fff;
-		// &::after{
-		// 	display: block;
-		// 	position: absolute;
-		// 	left: 50%;
-		// 	top: 50%;
-		// 	width: calc(100% - 30px);
-		// 	height: calc(100% - 30px);
-		// 	border: 4px solid #fff;
-		// 	border-radius: 5px;
-		// 	transform: translate(-50%, -50%);
-		// 	pointer-events: none;
-		// 	content: "";
-		// }
 	}
 	&_doc{
 		display: flex;
@@ -1213,15 +1256,13 @@ button {
 			width: 7em;
 			padding: 1em 1em 1em 0;
 			border-bottom: 2px solid $mainColor;
-			// font-family: $pixelFont;
 			font-weight: bold;
 			text-align: right;
 		}
 		&_txt{
 			width: calc(100% - 7em);
 			padding: 1em;
-			border-bottom: 2px solid #ddd;
-			// font-family: $pixelFont;
+			border-bottom: 2px solid $gray;
 			.work_ttl{
 				font-weight: normal;
 			}
@@ -1235,7 +1276,6 @@ button {
 		background-color: $mainColor;
 		color: #fff;
 		font-size: 0.85rem;
-		font-family: $pixelFont;
 		&_wrap{
 			display: flex;
 			flex-wrap: wrap;

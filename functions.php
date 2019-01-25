@@ -51,6 +51,13 @@ function disable_emoji()
 }
 add_action('init', 'disable_emoji');
 
+function custom_post_labels() {
+	global $wp_post_types;
+	$labels = &$wp_post_types['post']->labels;
+	$labels->name = 'ブログ';
+	$labels->singular_name = 'ブログ';
+}
+add_filter( 'init', 'custom_post_labels' );
 
 
 function new_excerpt_more($more) {
@@ -148,30 +155,6 @@ function syntaxCode($num) {//引数付き
 }
 add_shortcode('syntaxArea', 'syntaxCode');
 
-
-
-
-// function breadcrumb(){
-//   if(!is_home()&&!is_admin()){
-//     $str.= '<ol class="breadcrumb"><li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">';
-//     $str.= '<a href="'. home_url() .'" itemprop="url"><span itemprop="title">TOP</span></a></li>';
-//     if(is_category()) {
-//       $categories = get_the_category($post->ID);
-//       $cat = $categories[0];
-//       $str.='<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title">'. $cat-> cat_name . '</span></li>';
-//     }elseif(is_single()){
-//       $categories = get_the_category($post->ID);
-//       $cat = $categories[0];
-//       $str.='<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'. get_category_link($cat -> term_id). '" itemprop="url"><span itemprop="title">'. $cat-> cat_name . '</span></a></li>';
-//       $str.='<li>'. wp_title('', false) .'</li>';
-//     }else{
-//         $str.='<li>'. wp_title('', false) .'</li>';
-//     }
-//     $str.='</ol>';
-//   }
-// echo $str;
-// }
-
 function breadcrumb(){
   if(!is_front_page()&&!is_admin()){
     $str.= '<div class="breadcrumb"><ol class="breadcrumb_inner" class="cf"><li itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="home">';
@@ -205,7 +188,12 @@ function breadcrumb(){
 			}
 		}elseif(is_single()){//個別ページ
 			$post_type = get_post_type( $post );
-      $str.='<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/'. $post_type . '/" itemprop="url"><span itemprop="title">'. get_post_type_object($post_type)->labels->singular_name . '</span></a></li>';
+			if($post_type == 'post'){
+				$post_type_url = 'blog';
+			}else{
+				$post_type_url = $post_type;
+			}
+      $str.='<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/'. $post_type_url . '/" itemprop="url"><span itemprop="title">'. get_post_type_object($post_type)->labels->singular_name . '</span></a></li>';
       $str.='<li>'. get_the_title() .'</li>';
     }elseif(is_page()){//固定ページ
 			$page = get_post( get_the_ID() );
