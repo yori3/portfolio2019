@@ -8,39 +8,41 @@ Author: Yoriyasu Nishimura
 Author URI: http://yori3.heteml.jp/portfolio
 */
 
-//カフェオレ
+//カフェオレ（明るい茶色）
 // $mainColor: #b38867;
 // $bgColor: rgba(#ddbc95,0.2);
 // $darkColor: #b38867;
 // $darkBgColor: #626d71;
-// $gray: #cdcdc0;
-// $textColor: #333;
+// $gray: #ccc6c2;
+// $textColor: #4d4845;
 
-// 平原
-$mainColor: #75b1a9;
-$bgColor: rgba(#A9D4CE,0.2);
-$darkColor: #4B9288;
-$darkBgColor: #2B776D;
-$gray: #c2cccb;
-$textColor: #2e3332;
+// 平原（明るい緑）
+// $mainColor: #75b1a9;
+// $bgColor: rgba(#A9D4CE,0.2);
+// $darkColor: #4B9288;
+// $darkBgColor: #2B776D;
+// $gray: #c2cccb;
+// $textColor: #2e3332;
 
-//波
-// $mainColor: #66a5ad;
-// $bgColor: rgba(#c4dfe6,0.1);
-// $darkColor: #07575b;
-// $darkBgColor: #003b46;
-// $gray: #c2cbcc;
-// $textColor: #2e3233;
+// 海（明るめの青）
+$mainColor: #00A5BF;
+$bgColor: rgba(#00A5BF,0.1);
+$darkColor: #007C8D;
+$darkBgColor: #00616E;
+$gray: #b6bebf;
+$textColor: #454b4d;
+$errColor: #FF0700;
 
-//ブルーグレー
-$mainColor: #8593ae;
-$bgColor: rgba(#B5BED0,0.2);
-$darkColor: #5E7093;
-$darkBgColor: #3A4F78;
-$gray: #c2c5cc;
-$textColor: #2e3033;
+//ブルーグレー（暗めの青）
+// $mainColor: #8593ae;
+// $bgColor: rgba(#B5BED0,0.2);
+// $darkColor: #5E7093;
+// $darkBgColor: #3A4F78;
+// $gray: #c2c5cc;
+// $textColor: #41454d;
 
 $ttlFont: 'Orbitron', sans-serif;
+$enFont: 'Poppins', sans-serif;
 $pixelTtlFont: 'Press Start 2P', sans-serif;
 $pixelFont: 'PixelMplus10', sans-serif;
 
@@ -127,6 +129,10 @@ button {
   outline: none;
 }
 
+input{
+	outline-color: $mainColor;
+}
+
 @font-face {
   font-family: "PixelMplus10";
   src: url("font/PixelMplus10-Regular.woff") format("woff"), url("font/PixelMplus10-Regular.ttf") format("truetype");
@@ -209,7 +215,7 @@ button {
 	}
 }
 
-@media screen and (min-width:640px){
+@media screen and (min-width:780px){
 	.pc{
 		display: block;
 	}
@@ -328,7 +334,7 @@ button {
 	}
 }
 
-@media screen and (min-width:640px){
+@media screen and (min-width:780px){
 	.gnav{
 		position: static;
 		height: 70px;
@@ -444,7 +450,7 @@ button {
 	}
 }
 
-@media screen and (min-width:640px){
+@media screen and (min-width:780px){
   .footer{
   }
 
@@ -514,7 +520,7 @@ button {
   margin-bottom: 30px;
 	color: $darkColor;
   font-size: 2rem;
-	font-family: $ttlFont;
+	font-family: $enFont;
   text-align: center;
 }
 
@@ -576,7 +582,6 @@ button {
 		top: 0;
     width: 100%;
     height: 100%;
-    // background-image: linear-gradient(160deg,rgba(206,220,242,0.5) 55%,rgba(122,155,204,0.5) 55%,rgba(102,102,102,0.5) 100%), linear-gradient(70deg,#cedcf2 55%,#4585e5 55%,#4585e5 100%);
 		background: $mainColor;
 		z-index: -1;
 		opacity: 0.8;
@@ -604,7 +609,7 @@ button {
 	}
 }
 
-@media screen and (min-width:640px){
+@media screen and (min-width:780px){
 	.main{
 		padding-top: 70px;
 	}
@@ -625,9 +630,27 @@ button {
 			border: 1px solid $mainColor;
 			background-color: #fff;
 			color: $mainColor;
-			&:hover{
+			overflow: hidden;
+			z-index: 1;
+			&::before{
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 120%;
+				height: 500%;
 				background-color: $mainColor;
+				transform: rotate(10deg) scaleX(0) translate(0,-25%);
+				transform-origin: left top;
+				transition: .6s;
+				z-index: -1;
+				content: "";
+			}
+			&:hover{
 				color: #fff;
+				&::before{
+					transform: rotate(10deg) scaleX(1) translate(0,-25%);
+				}
 			}
 		}
 	}
@@ -681,7 +704,6 @@ button {
 	&_about{
 		&_lead{
 			font-size: 1rem;
-			text-align: center;
 			line-height: 1.75;
 			p{
 				&+p{
@@ -695,7 +717,7 @@ button {
 
 
 
-@media screen and (min-width:640px){
+@media screen and (min-width:780px){
 	.kv_home{
 		height: 300px;
 		.site_title{
@@ -707,6 +729,7 @@ button {
 		&_about{
 			&_lead{
 				font-size: 1.1rem;
+				text-align: center;
 			}
 		}
 	}
@@ -716,7 +739,8 @@ button {
 //article
 .article{
 	&_item{
-	  margin-bottom: 20px;
+		max-width: 460px;
+	  margin: 0 auto 20px;
 		background-color: #fff;
 	}
 
@@ -847,7 +871,7 @@ button {
   margin: 0 auto;
 }
 
-@media screen and (min-width:640px){
+@media screen and (min-width:780px){
 	.article{
 		&_list{
 	    display: flex;
@@ -857,8 +881,8 @@ button {
 	  }
 
 	  &_item{
-	    width: 300px;
-	    margin-left: 30px;
+	    width: 32%;
+	    margin-left: 2%;
 	    margin-bottom: 30px;
 			&:nth-child(3n+1){
 		    margin-left: 0;
@@ -1062,7 +1086,7 @@ button {
 				border-left: none;
 				padding-left: 0;
 	      font-size: 1.2rem;
-				font-family: $ttlFont;
+				font-family: $enFont;
 				&::before{
 					display: none;
 				}
@@ -1084,7 +1108,7 @@ button {
 	}
 }
 
-@media screen and (min-width:640px){
+@media screen and (min-width:780px){
 	.post{
 	  &_area{
 	    margin-bottom: 100px;
@@ -1152,6 +1176,18 @@ button {
 			z-index: 1;
 		}
 	}
+
+	&_lead_area{
+		margin-bottom: 30px;
+		font-size: 1rem;
+		line-height: 1.75;
+		p{
+			&+p{
+				margin-top: 1.5em;
+			}
+		}
+	}
+
 	&_label{
 		padding-bottom: .5em;
 		font-family: $pixelTtlFont;
@@ -1199,7 +1235,7 @@ button {
 	}
 }
 
-@media screen and (min-width:640px){
+@media screen and (min-width:780px){
 	.about{
 		&_area{
 			padding: 60px 50px 50px;
@@ -1211,6 +1247,11 @@ button {
 				display: flex;
 				margin-top: 60px;
 			}
+		}
+
+		&_lead_area{
+			margin-bottom: 60px;
+			font-size: 1.1rem;
 		}
 	}
 
@@ -1283,7 +1324,7 @@ button {
 		}
 	}
 }
-@media screen and (min-width:640px){
+@media screen and (min-width:780px){
 	.work{
 		&_list{
 			display: flex;
@@ -1298,3 +1339,172 @@ button {
 		}
 	}
 }
+
+//お問い合わせ
+.form{
+	&_inner{
+		margin-bottom: 50px;
+	}
+	&_label{
+		margin-bottom: 10px;
+		font-size: 1rem;
+		font-weight: bold;
+		line-height: 1.1;
+		&.required{
+			&::after{
+				display: inline-block;
+				margin-left: .5em;
+				padding: .5em .3em .3em;
+				border-radius: 5px;
+				background-color: $errColor;
+				color: #fff;
+				font-size: .85em;
+				line-height: 1;
+				content: "必須";
+			}
+		}
+	}
+	&_item{
+		margin-bottom: 20px;
+		input[type="text"]{
+			padding: 0.5em;
+			border: 1px solid $gray;
+			border-radius: 5px;
+			&[name="name"]{
+				width: 15em;
+				max-width: 100%;
+			}
+			&[name="email"]{
+				width: 100%;
+			}
+		}
+		textarea{
+			@extend input[type="text"];
+			width: 100%;
+			height: 10em;
+		}
+	}
+	&_btn{
+		&_body{
+			font-family: $enFont;
+			&.btn_return{
+				margin-bottom: 30px;
+				border-color: $gray;
+				background-color: $gray;
+				color: #fff;
+				&::after{
+					width: 1em;
+				}
+			}
+		}
+	}
+
+	&_complete{
+		&_txt{
+			font-size: 1.1rem;
+			line-height: 1.75;
+			text-align: center;
+			p{
+				&+p{
+					margin-top: 1em;
+				}
+			}
+		}
+	}
+}
+
+.contact{
+	&_lead{
+		margin-bottom: 40px;
+		line-height: 1.75;
+	}
+}
+
+.mwform-radio-field{
+margin-bottom: 10px;
+	input{
+		position: absolute;
+		opacity: 0;
+	}
+}
+.mwform-radio-field-text{
+	display: inline-block;
+	position: relative;
+	padding-left: 1.5em;
+	&::before{
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 50%;
+		width: 1em;
+		height: 1em;
+		border: 1px solid $gray;
+		border-radius: 50%;
+		background-image: linear-gradient(to bottom, #fff 0%, $gray 100%);
+		transform: translateY(-50%);
+		content: "";
+	}
+	&::after{
+		display: none;
+		position: absolute;
+		left: .6em;
+		top: 50%;
+		width: 0.6em;
+		height: 0.6em;
+		border-radius: 50%;
+		background-color: $mainColor;
+		transform: translate(-50%, -50%);
+		content: "";
+	}
+	input[type="radio"]:checked + &{
+		&::after{
+			display: block;
+		}
+	}
+}
+
+@media screen and (min-width:780px){
+
+	.form{
+		&_area{
+			max-width: 750px;
+			margin: 0 auto;
+		}
+		&_inner{
+			display: flex;
+			flex-wrap: wrap;
+			margin-bottom: 70px;
+		}
+		&_label{
+			width: 12em;
+			margin-bottom: 15px;
+		}
+		&_item{
+			width: calc(100% - 12em);
+			margin-bottom: 40px;
+		}
+		&_btn{
+			display: flex;
+			margin: 0 auto;
+			max-width: 600px;
+			&_body{
+				width: 48%;
+				margin: 0 auto;
+				cursor: pointer;
+				&.btn_return{
+					margin-bottom: 0;
+					margin-right: 4%;
+					&::before{
+						display: none;
+					}
+				}
+			}
+		}
+	}
+	.contact{
+		&_lead{
+			max-width: 750px;
+			margin: 0 auto 50px;
+		}
+	}
+}//media

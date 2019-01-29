@@ -1,4 +1,4 @@
-<?php if( !is_front_page()) : ?>
+<?php if( !is_front_page() && !is_page('confirm')) : ?>
 <div class="btn btn_top"><a class="btn_body btn_return" href="<?php echo home_url(); ?>">トップへ戻る</a></div>
 <?php endif; ?>
 

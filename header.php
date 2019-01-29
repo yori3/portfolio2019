@@ -13,7 +13,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link href="https://fonts.googleapis.com/css?family=Hind+Siliguri:400,700|Press+Start+2P|Orbitron:400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Hind+Siliguri:400,700|Press+Start+2P|Orbitron:400,700|Poppins:400,600" rel="stylesheet">
 <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
 <?php wp_head(); ?>
 </head>
@@ -27,7 +27,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <header class="header" id="header">
   <div class="header_main">
-    <div class="site_logo"><a href="<?php home_url(); ?>">
+    <div class="site_logo"><a href="<?php echo home_url(); ?>">
       <svg class="logo_mark">
         <use xlink:href="#logo"/>
       </svg>

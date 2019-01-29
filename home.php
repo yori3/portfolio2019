@@ -3,7 +3,7 @@
 <main id="main" class="main">
 
   <div class="kv page_kv">
-    <h1 class="page_ttl"><span class="ttl_inner"><?php bloginfo( 'name' ); ?><span class="sub_title">-Web creator's Study and Try-</span></span></h1>
+    <h1 class="page_ttl"><span class="ttl_inner">Blog</span></h1>
   </div>
 
   <?php breadcrumb(); ?>
