@@ -55,11 +55,53 @@ var currentScrPoint;
  });
 
 $('a[href^="#"]').on('click',function(e){
-	var headerHeight = $('.header').height();
-	var scrPos = $($(this).attr('href')).offset().top - headerHeight;
+	var scrPos = $($(this).attr('href')).offset().top;
 	$('html, body').animate({scrollTop:scrPos},600);
 	e.preventDefault();
 });
+
+
+var flagFormName = false;
+var flagFormEmail = false;
+var flagFormMessage = false;
+formValidate();
+
+$('input[name="name"]').on('blur keyup',function(){
+	formValidate();
+});
+$('input[name="email"]').on('blur keyup',function(){
+	formValidate();
+});
+$('textarea').on('blur keyup',function(){
+	formValidate();
+});
+
+function formValidate(){
+	if($('input[name="name"]').val() != ''){
+		flagFormName = true;
+	}else{
+		flagFormName = false;
+	}
+	if($('input[name="email"]').val() != ''){
+		flagFormEmail = true;
+	}else{
+		flagFormEmail = false;
+	}
+	if($('textarea').val() != ''){
+		flagFormMessage = true;
+	}else{
+		flagFormMessage = false;
+	}
+
+	if(flagFormName && flagFormEmail && flagFormMessage){
+		$('.btn_confirm').addClass('action');
+	}else{
+		$('.btn_confirm').removeClass('action');
+	}
+}
+
+
+
 
 //cookie表示
 $.cookie('cookie_box_close') == 'on'?$('.cookie_box').hide():$('.cookie_box').show();

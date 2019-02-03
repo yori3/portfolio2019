@@ -14,7 +14,66 @@
         <p>ブログなどを通して、新しく知ったことや、実践したことを発信し、<br>また、様々な情報を収集していき、<br>Webクリエイターとしての発展を目指しています。</p>
       </div>
 
-      <div class="btn btn_more"><a href="<?php echo home_url(); ?>/about/" class="btn_body">詳しいプロフィールを見る</a></div>
+      <div class="profile_area top_about_area">
+        <h2 class="top_about_area_ttl">Profile</h2>
+        <div class="profile_img"><img src="<?php echo get_template_directory_uri(); ?>/images/img_mine.jpg" alt=""></div>
+        <div class="profile_content">
+          <dl class="about_list">
+            <dt class="about_label">Name</dt>
+            <dd class="about_txt">西村　依泰</dd>
+            <dt class="about_label">Birth/Age</dt>
+            <dd class="about_txt">1988.04.01／30</dd>
+            <dt class="about_label">Living</dt>
+            <dd class="about_txt">大阪府</dd>
+            <dt class="about_label">Work</dt>
+            <dd class="about_txt">元小学校教諭（〜2015）<br>マークアップ・CSSコーディング（2016〜）<br>ディレクション（2018〜）</dd>
+            <dt class="about_label">hobby</dt>
+            <dd class="about_txt">楽器（ピアノ・ギター）、推理小説、TVゲーム</dd>
+            <dt class="about_label">Like</dt>
+            <dd class="about_txt">コーヒー、甘味</dd>
+            <dt class="about_label">Community</dt>
+            <dd class="about_txt">Word Camp Kansai 2016 実行委員<br>Word Camp Kyoto 2017 実行委員<br>Word Camp Osaka 2018 実行委員</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="skill_area top_about_area">
+        <h2 class="top_about_area_ttl">Skill</h2>
+        <div class="skill_content">
+          <h3 class="about_box_ttl">Tools</h3>
+          <dl class="about_list">
+            <dt class="about_label">Photoshop</dt>
+            <dd class="about_txt">★★★★</dd>
+            <dt class="about_label">Illustrator</dt>
+            <dd class="about_txt">★★</dd>
+            <dt class="about_label">Dreamweaver</dt>
+            <dd class="about_txt">★★★★</dd>
+            <dt class="about_label">Atom</dt>
+            <dd class="about_txt">★★★★</dd>
+            <dt class="about_label">Google Analytics</dt>
+            <dd class="about_txt">★★★</dd>
+            <dt class="about_label">Github</dt>
+            <dd class="about_txt">★★</dd>
+          </dl>
+        </div>
+        <div class="skill_content">
+          <h3 class="about_box_ttl">Language</h3>
+          <dl class="about_list">
+            <dt class="about_label">HTML</dt>
+            <dd class="about_txt">★★★★</dd>
+            <dt class="about_label">CSS</dt>
+            <dd class="about_txt">★★★★★</dd>
+            <dt class="about_label">jQuery</dt>
+            <dd class="about_txt">★★★★</dd>
+            <dt class="about_label">PHP</dt>
+            <dd class="about_txt">★★★</dd>
+            <dt class="about_label">WordPress</dt>
+            <dd class="about_txt">★★★★</dd>
+          </dl>
+        </div>
+      </div>
+
+      <!-- <div class="btn btn_more"><a href="<?php echo home_url(); ?>/about/" class="btn_body">詳しいプロフィールを見る</a></div> -->
     </div>
   </section>
 

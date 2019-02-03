@@ -13,7 +13,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link href="https://fonts.googleapis.com/css?family=Hind+Siliguri:400,700|Press+Start+2P|Orbitron:400,700|Poppins:400,600" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Hind+Siliguri:400,600|Press+Start+2P|Orbitron:400,700|Poppins:400,600" rel="stylesheet">
 <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
 <?php wp_head(); ?>
 </head>
@@ -35,7 +35,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <nav class="gnav">
       <button class="gnav_toggle"><span class="gnav_toggle_body"></span></button>
       <ul class="gnav_inner">
-        <li class="gnav_item"><a href="<?php echo home_url(); ?>/about/" class="gnav_body">プロフィール</a></li>
+        <li class="gnav_item"><a href="<?php if(!is_front_page()){ echo home_url();} ?>#about" class="gnav_body">プロフィール</a></li>
         <li class="gnav_item"><a href="<?php echo home_url(); ?>/blog/" class="gnav_body">ブログ</a></li>
         <li class="gnav_item"><a href="<?php if(!is_front_page()){ echo home_url();} ?>#works" class="gnav_body">実績</a></li>
         <li class="gnav_item"><a href="<?php echo home_url(); ?>/contact/" class="gnav_body">お問い合わせ</a></li>
