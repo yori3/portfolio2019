@@ -35,7 +35,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <nav class="gnav">
       <button class="gnav_toggle"><span class="gnav_toggle_body"></span></button>
       <ul class="gnav_inner">
-        <li class="gnav_item"><a href="<?php if(!is_front_page()){ echo home_url();} ?>#about" class="gnav_body">プロフィール</a></li>
+        <li class="gnav_item"><a href="<?php echo home_url(); ?>/about/" class="gnav_body">プロフィール</a></li>
         <li class="gnav_item"><a href="<?php echo home_url(); ?>/blog/" class="gnav_body">ブログ</a></li>
         <li class="gnav_item"><a href="<?php if(!is_front_page()){ echo home_url();} ?>#works" class="gnav_body">実績</a></li>
         <li class="gnav_item"><a href="<?php echo home_url(); ?>/contact/" class="gnav_body">お問い合わせ</a></li>

@@ -8,44 +8,24 @@ Author: Yoriyasu Nishimura
 Author URI: http://yori3.heteml.jp/portfolio
 */
 
-//カフェオレ（明るい茶色）
-// $mainColor: #b38867;
-// $bgColor: rgba(#ddbc95,0.2);
-// $darkColor: #b38867;
-// $darkBgColor: #626d71;
-// $gray: #ccc6c2;
-// $textColor: #4d4845;
 
-// 平原（明るい緑）
-// $mainColor: #75b1a9;
-// $bgColor: rgba(#A9D4CE,0.2);
-// $darkColor: #4B9288;
-// $darkBgColor: #2B776D;
-// $gray: #c2cccb;
-// $textColor: #2e3332;
+// アクアグレイ
+$mainColor: #61a6c6;
+$accentColor: #62D390;
 
-// 海（明るめの青）
-$mainColor: #649bb1;
-$bgColor: rgba(#a5ccdc,0.3);
-$darkColor: #417D94;
-$darkBgColor: #28677F;
-$gray: #e3eef2;
-$textColor: #36464d;
-$linkColor: #417D94;
-$errColor: #EC7761;
+$bgColor: rgba(#61a6c6,0.1);
+$darkColor: #61a6c6;
+
+$blueGray: #daecf2;
+$gray: #ccc;
+$black: #333;
+
+$textColor: #36454d;
+$linkColor: #3F87AA;
+$errColor: #FF7656;
 
 
-//ブルーグレー（暗めの青）
-// $mainColor: #8593ae;
-// $bgColor: rgba(#B5BED0,0.2);
-// $darkColor: #5E7093;
-// $darkBgColor: #3A4F78;
-// $gray: #c2c5cc;
-// $linkColor: #5E7093;
-// $textColor: #41454d;
-// $errColor: #FF2D1D;
-
-$ttlFont: 'Orbitron', sans-serif;
+$ttlFont: 'Poppins', sans-serif;
 $enFont: 'Poppins', sans-serif;
 $pixelTtlFont: 'Press Start 2P', sans-serif;
 $pixelFont: 'PixelMplus10', sans-serif;
@@ -212,8 +192,7 @@ input,textarea{
 }
 
 .site_logo{
-	width: 120px;
-	height: 100%;
+	width: 90px;
 	svg{
 		width: 100%;
 		height: 100%;
@@ -236,15 +215,8 @@ input,textarea{
 		z-index: 1000;
 		height: 70px;
 	}
-}/* @media */
-
-@media screen and (min-width:965px){
-  .header_main {
-		.page_discription{
-	    width: 960px;
-	    margin: 0 auto;
-	    padding-left: 0;
-	  }
+	.site_logo{
+		width: 120px;
 	}
 }/* @media */
 
@@ -261,7 +233,7 @@ input,textarea{
 		top: 0;
 		width: 50px;
 		height: 50px;
-		background-color: $darkBgColor;
+		background-color: $darkColor;
 		pointer-events: all;
 		&_body{
 			position: absolute;
@@ -330,7 +302,7 @@ input,textarea{
 		display: block;
 		padding: 20px 4%;
 		border-bottom: 1px solid #fff;
-		background-color: $darkBgColor;
+		background-color: $darkColor;
 		color: #fff;
 		font-size: 1rem;
 		line-height: 1.3;
@@ -376,7 +348,7 @@ input,textarea{
 				bottom: -0.2em;
 				width: calc(100% - 1em);
 				height: 2px;
-				background-color: #fff;
+				background-color: $blueGray;
 				transform: scaleX(0);
 				transform-origin: left top;
 				transition: .5s;
@@ -425,8 +397,8 @@ input,textarea{
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		width: 10px;
-		height: 10px;
+		width: 15px;
+		height: 15px;
 		border-left: 5px solid #fff;
 		border-top: 5px solid #fff;
 	  transform: translate(-50%,-25%) rotate(45deg);
@@ -544,6 +516,7 @@ input,textarea{
 		position: relative;
 		width: 100%;
 		height: 60px;
+		border-radius: 30px;
 		background-color: $mainColor;
 		color: #fff;
 		font-size: 1.1rem;
@@ -580,39 +553,31 @@ input,textarea{
 
 .kv{
   position: relative;
-	background-image: url(images/kv.jpg);
 	background-repeat: no-repeat;
 	background-position: center 30%;
 	background-size: cover;
 	line-height: 1;
 	overflow: hidden;
 	z-index: 1;
-	&::after{
-		position: absolute;
-		left: 0;
-		top: 0;
-    width: 100%;
-    height: 100%;
-		background: $darkColor;
-		z-index: -1;
-		opacity: 0.5;
-		content: "";
-	}
 	&.page_kv{
 		display: flex;
     justify-content: center;
     align-items: center;
 		height: 100px;
+		background-image: url(images/kv_bg.jpg);
 	}
 }
 
 .page_ttl{
+	width: 100%;
+	padding: .2em 0;
 	color: #fff;
   font-size: 2.6rem;
 	font-family: $ttlFont;
 	font-weight: bold;
   text-align: center;
-	text-shadow: 3px 3px 3px rgba(0,0,0,.5);
+	background-color: rgba($darkColor,0.5);
+	// text-shadow: 1px 1px 3px rgba($darkColor,.5);
 	.sub_title{
 	  display: block;
 	  font-size: .4em;
@@ -691,17 +656,20 @@ input,textarea{
 .kv_home{
 	width: 100%;
 	height: 100px;
+	background-image: url(images/kv_main.jpg);
 	.site_title{
 		position: absolute;
-		left: 0;
+		left: 50%;
 		top: 50%;
 		width: 100%;
+		padding: .1em 0 .2em;
+		background-color: rgba($darkColor,0.5);
 		color: #fff;
 		font-size: 4rem;
 		font-family: $ttlFont;
 	  text-shadow: 1px 1px 3px rgba(0,0,0,.5);
 	  line-height: 1;
-		transform: translateY(-50%);
+		transform: translate(-50%,-50%);
 		text-align: center;
 	}
 	.sub_title{
@@ -815,10 +783,11 @@ input,textarea{
   a.page-numbers{
     display: inline-block;
 		position: relative;
-    background: #fff;
-    border: solid 1px $mainColor;
-    padding:12px 15px;
     margin:0 2px;
+    padding:12px 15px;
+    border: solid 1px $mainColor;
+		border-radius: 2px;
+    background: #fff;
     text-decoration: none;
 		&::after{
 			display: block;
@@ -848,10 +817,11 @@ input,textarea{
   }
   .current{
     display: inline-block;
-    background: $mainColor;
-    border: solid 1px $mainColor;
-    padding:12px 15px;
     margin:0 2px;
+    padding:12px 15px;
+    border: solid 1px $mainColor;
+		border-radius: 2px;
+    background: $mainColor;
     color: #fff;
     text-decoration: none;
   }
@@ -948,7 +918,7 @@ input,textarea{
       }
 			&.next,&.prev{
 				&:hover{
-					color: #fff;
+					color: $mainColor;
 				}
 			}
     }
@@ -982,7 +952,7 @@ input,textarea{
 			top: 0;
 			width: 100%;
 			height: 100%;
-			background-color: rgba($darkBgColor,.8);
+			background-color: rgba($darkColor,.8);
 			content: "";
 		}
 		&_inner{
@@ -1103,8 +1073,8 @@ input,textarea{
 	  &_area{
 	    margin-bottom: 100px;
 	    padding-bottom: 40px;
-		  border: 1px solid $gray;
-      // box-shadow: 1px 1px 10px rgba(0,0,0,.3);
+		  border: 1px solid $mainColor;
+			border-radius: 0 0 5px 5px;
 	  }
 
 		&_header{
@@ -1127,51 +1097,40 @@ input,textarea{
 
 //自己紹介
 .about{
-	font-family: $pixelFont;
-	.about_label,
-	.about_box_ttl{
-		font-family: $pixelTtlFont;
-	}
 	&_area{
 		position: relative;
-		padding: 40px 30px 30px;
-		border-radius: 5px;
-		background-color: #333;
-		color: #fff;
-		font-size: 1.1rem;
-		line-height: 1.5;
-		&::after{
-			display: block;
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			width: calc(100% - 30px);
-			height: calc(100% - 30px);
-			border: 4px solid #fff;
-			border-radius: 5px;
-			transform: translate(-50%, -50%);
-			pointer-events: none;
-			content: "";
+		margin-top: 60px;
+		&_ttl{
+			position: relative;
+			margin-bottom: 30px;
+			padding-left: 15px;
+			color: $darkColor;
+			font-size: 1.8rem;
+			&::before,&::after{
+				display: block;
+				position: absolute;
+				left: 0;
+				content: "";
+			}
+			&::before{
+				bottom: -2px;
+				width: 100%;
+				height: 2px;
+				background-color: $darkColor;
+			}
+			&::after{
+				bottom: -10px;
+				border: 8px solid transparent;
+				border-top: 8px solid $darkColor;
+				transform: rotate(-45deg);
+			}
 		}
 		&.skill_area{
 			margin-top: 30px;
 		}
-		&_ttl{
-			display: inline-block;
-			position: absolute;
-			left: 50%;
-			top: 0;
-			padding: 0 0.5em;
-			background-color: #333;
-			font-family: $pixelTtlFont;
-			font-size: 1.5rem;
-			text-align: center;
-			transform: translate(-50%, 0%);
-			z-index: 1;
-		}
 	}
 
-	&_lead_area{
+	&_lead{
 		margin-bottom: 30px;
 		font-size: 1rem;
 		line-height: 1.75;
@@ -1181,26 +1140,46 @@ input,textarea{
 			}
 		}
 	}
-
+	&_box_ttl{
+		position: absolute;
+		left: 0;
+		top: 0;
+		padding: .2em;
+		background-color: #fff;
+		margin-bottom: 1em;
+		font-size: 1.5rem;
+		transform: translate(.5em,-50%);
+		&::first-letter{
+			color: $mainColor;
+		}
+	}
 	&_label{
-		padding-bottom: .5em;
+		display: inline-block;
+		position: relative;
+		margin-bottom: 10px;
+		padding: .2em .5em;
+		background-color: $mainColor;
+		color: #fff;
+		font-size: 1.1rem;
+		font-weight: bold;
+		&::after{
+			display: block;
+			position: absolute;
+			right: -15px;
+			bottom: -15px;
+			border: 15px solid transparent;
+			border-top: 15px solid $mainColor;
+			transform: rotate(45deg);
+			content: "";
+		}
 	}
 	&_txt{
 		padding-left: 1em;
 		padding-bottom: 1.5em;
+		line-height: 1.3;
 		&:last-of-type{
 			padding-bottom: 0;
 		}
-	}
-	&_box{
-		&_ttl{
-			margin-bottom: 1em;
-			font-size: 1.5rem;
-		}
-	}
-
-	.page_ttl{
-		font-family: $pixelTtlFont;
 	}
 }
 
@@ -1212,109 +1191,38 @@ input,textarea{
 
 .skill{
 	&_content{
+		position: relative;
+		border: 2px solid $mainColor;
+		border-radius: 5px;
 		&+.skill_content{
-			margin-top: 20px;
-			padding-top: 20px;
-			border-top: 4px solid #fff;
+			margin-top: 30px;
 		}
 		.about_list{
-			padding-left: 15px;
+			padding: 20px 15px 15px;
 		}
 		.about_txt{
+			color: $mainColor;
 			font-size: 1.2em;
 			letter-spacing: 0.5em;
 		}
 	}
 }
 
-.top{
-	&_about{
-		&_lead{
-			font-size: 1rem;
-			line-height: 1.75;
-			p{
-				&+p{
-					margin-top: 1.5em;
-				}
-			}
-		}
-		&_area{
-			margin-top: 60px;
-			padding-left: 15px;
-			&_ttl{
-				position: relative;
-				margin-bottom: 20px;
-				color: $darkColor;
-				font-size: 1.5rem;
-				&::before,&::after{
-					display: block;
-					position: absolute;
-					left: -12px;
-					content: "";
-				}
-				&::before{
-					bottom: -2px;
-					width: 100%;
-					height: 2px;
-					background-color: $mainColor;
-				}
-				&::after{
-					bottom: -10px;
-					border: 8px solid transparent;
-					border-top: 8px solid $mainColor;
-					transform: rotate(-45deg);
-				}
-			}
-			.about{
-				&_box_ttl{
-					&::before{
-						display: inline-block;
-						width: .5em;
-						height: 6px;
-						margin-right: .2em;
-						border-radius: 20px;
-						background-color: $mainColor;
-						vertical-align: top;transform: translateY(.4em);
-						content: "";
-					}
-				}
-				&_label{
-					display: inline-block;
-					position: relative;
-					margin-bottom: 10px;
-					padding: .2em .5em;
-					background-color: $mainColor;
-					color: #fff;
-					font-size: 1.1rem;
-					font-weight: bold;
-					&::after{
-						display: block;
-						position: absolute;
-						right: -15px;
-						bottom: -15px;
-						border: 15px solid transparent;
-						border-top: 15px solid $mainColor;
-						transform: rotate(45deg);
-						content: "";
-					}
-				}
-				&_txt{
-					line-height: 1.3;
-				}
-			}
-			.skill_content{
-				.about_txt{
-					color: $mainColor;
-				}
-			}
-		}
-	}
-}
-
 @media screen and (min-width:780px){
 	.about{
+		&_lead{
+			font-size: 1.1rem;
+			text-align: center;
+		}
 		&_area{
-			padding: 60px 50px 50px;
+			display: flex;
+			flex-wrap: wrap;
+			margin-top: 80px;
+			&_ttl{
+				width: 100%;
+				margin-bottom: 40px;
+				font-size: 2rem;
+			}
 			&.profile_area{
 				display: flex;
 				justify-content: space-between;
@@ -1328,6 +1236,18 @@ input,textarea{
 		&_lead_area{
 			margin-bottom: 60px;
 			font-size: 1.1rem;
+		}
+
+		&_label{
+			&::after{
+				right: -17px;
+				bottom: -17px;
+				border-width: 17px;
+			}
+		}
+
+		&_box_ttl{
+			transform: translate(20px, -50%)
 		}
 	}
 
@@ -1344,43 +1264,15 @@ input,textarea{
 
 	.skill{
 		&_content{
-			width: 50%;
+			width: 48%;
 			&+.skill_content{
 				margin-top: 0;
-				padding-top: 0;
-				border-top: none;
+			}
+			.about_list{
+				padding: 30px 20px 20px;
 			}
 			&:nth-of-type(even){
-				padding-left: 40px;
-				border-left: 4px solid #fff;
-			}
-		}
-	}
-
-	.top{
-		&_about{
-			&_lead{
-				font-size: 1.1rem;
-				text-align: center;
-			}
-			&_area{
-				display: flex;
-				flex-wrap: wrap;
-				margin-top: 80px;
-				&_ttl{
-					width: 100%;
-					margin-bottom: 30px;
-					font-size: 2rem;
-				}
-				.about{
-					&_label{
-						&::after{
-							right: -17px;
-							bottom: -17px;
-							border-width: 17px;
-						}
-					}
-				}
+				margin-left: 4%;
 			}
 		}
 	}
@@ -1400,7 +1292,7 @@ input,textarea{
 		&_label{
 			position: relative;
 			width: 7em;
-			padding: 1em 1em 1em 0;
+			padding: calc(1.5em - 4px) 1em 1.5em 0;
 			font-weight: bold;
 			text-align: right;
 			&::after{
@@ -1418,7 +1310,7 @@ input,textarea{
 		&_txt{
 			position: relative;
 			width: calc(100% - 7em);
-			padding: 1em;
+			padding: calc(1.5em - 4px) 1em 1.5em;
 			&::after{
 				display: block;
 				position: absolute;
@@ -1427,7 +1319,7 @@ input,textarea{
 				width: 100%;
 				height: 4px;
 				border-radius: 0 50px 50px 0;
-				background-color: $gray;
+				background-color: $blueGray;
 				content: "";
 			}
 			.work_ttl{
@@ -1494,7 +1386,7 @@ input,textarea{
 		margin-bottom: 20px;
 		input[type="text"]{
 			padding: 0.5em;
-			border: 1px solid $gray;
+			border: 1px solid $blueGray;
 			border-radius: 5px;
 			&[name="name"]{
 				width: 15em;
@@ -1518,6 +1410,7 @@ input,textarea{
 			position: relative;
 			width: 100%;
 			height: 60px;
+			border-radius: 30px;
 			background-color: $gray;
 			color: #fff;
 			font-size: 1.1rem;
@@ -1535,7 +1428,7 @@ input,textarea{
 				content: "\f105";
 			}
 			&.action{
-				background-color: $mainColor;
+				background-color: $accentColor;
 				pointer-events: all;
 			}
 			&.btn_return{
@@ -1589,9 +1482,9 @@ margin-bottom: 10px;
 		top: 50%;
 		width: 15px;
 		height: 15px;
-		border: 1px solid $gray;
+		border: 1px solid $blueGray;
 		border-radius: 50%;
-		background-image: linear-gradient(to bottom, #fff 0%, $gray 100%);
+		background-image: linear-gradient(to bottom, #fff 0%, $blueGray 100%);
 		transform: translateY(-50%);
 		content: "";
 	}
@@ -1612,6 +1505,11 @@ margin-bottom: 10px;
 			display: block;
 		}
 	}
+}
+
+.mw_wp_form .error{
+	padding-top: 0.5em;
+	color: $errColor;
 }
 
 @media screen and (min-width:780px){
