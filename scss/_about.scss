@@ -1,0 +1,204 @@
+//自己紹介
+.about{
+	&_area{
+		position: relative;
+		margin-top: 60px;
+		&_ttl{
+			position: relative;
+			margin-bottom: 30px;
+			// padding-left: 15px;
+			// color: $darkColor;
+			font-size: 1.8rem;
+			&:first-letter{
+				color: $darkColor;
+				font-size: 1.5em;
+			}
+			&::before,&::after{
+				display: block;
+				position: absolute;
+				left: 0;
+				content: "";
+			}
+			&::before{
+				bottom: -2px;
+				width: 100%;
+				height: 2px;
+				background-color: $darkColor;
+			}
+			// &::after{
+			// 	bottom: -10px;
+			// 	border: 8px solid transparent;
+			// 	border-top: 8px solid $darkColor;
+			// 	transform: rotate(-45deg);
+			// }
+		}
+		&.skill_area{
+			margin-top: 30px;
+		}
+	}
+
+	&_lead{
+		margin-bottom: 30px;
+		font-size: 1rem;
+		line-height: 1.75;
+		p{
+			&+p{
+				margin-top: 1.5em;
+			}
+		}
+	}
+	&_box_ttl{
+		position: absolute;
+		left: 0;
+		top: 0;
+		padding: .2em;
+		background-color: #fff;
+		margin-bottom: 1em;
+		font-size: 1.5rem;
+		transform: translate(.5em,-50%);
+		&::before{
+			display: inline-block;
+			position: relative;
+			top: 2px;
+			margin-right: .3em;
+			color: $mainColor;
+			font-family: "ionicons";
+		}
+		.tools &{
+			&::before{
+				content: "\f2ad"
+			}
+		}
+		.language &{
+			&::before{
+				content: "\f271";
+			}
+		}
+		&::first-letter{
+			color: $mainColor;
+		}
+	}
+	&_label{
+		display: inline-block;
+		position: relative;
+		margin-bottom: 10px;
+		padding: .2em .5em;
+		background-color: $mainColor;
+		color: #fff;
+		font-size: 1.1rem;
+		font-weight: bold;
+		&::after{
+			display: block;
+			position: absolute;
+			right: -15px;
+			bottom: -15px;
+			border: 15px solid transparent;
+			border-top: 15px solid $mainColor;
+			transform: rotate(45deg);
+			content: "";
+		}
+	}
+	&_txt{
+		padding-left: 1em;
+		padding-bottom: 1.5em;
+		line-height: 1.3;
+		&:last-of-type{
+			padding-bottom: 0;
+		}
+	}
+}
+
+.profile{
+	&_img{
+		margin-bottom: 15px;
+	}
+}
+
+.skill{
+	&_content{
+		position: relative;
+		border: 2px solid $mainColor;
+		border-radius: 5px;
+		&+.skill_content{
+			margin-top: 30px;
+		}
+		.about_list{
+			padding: 20px 15px 15px;
+		}
+		.about_txt{
+			color: $mainColor;
+			font-size: 1.2em;
+			letter-spacing: 0.5em;
+		}
+	}
+}
+
+@media screen and (min-width:780px){
+	.about{
+		&_lead{
+			font-size: 1.1rem;
+			text-align: center;
+		}
+		&_area{
+			display: flex;
+			flex-wrap: wrap;
+			margin-top: 80px;
+			&_ttl{
+				width: 100%;
+				margin-bottom: 40px;
+				font-size: 2rem;
+			}
+			&.profile_area{
+				display: flex;
+				justify-content: space-between;
+			}
+			&.skill_area{
+				display: flex;
+				margin-top: 60px;
+			}
+		}
+
+		&_lead_area{
+			margin-bottom: 60px;
+			font-size: 1.1rem;
+		}
+
+		&_label{
+			&::after{
+				right: -17px;
+				bottom: -17px;
+				border-width: 17px;
+			}
+		}
+
+		&_box_ttl{
+			transform: translate(20px, -50%)
+		}
+	}
+
+	.profile{
+		&_img{
+			width: 40%;
+			margin-bottom: 0;
+		}
+		&_content{
+			flex: 1 0 60%;
+			padding-left: 5%;
+		}
+	}
+
+	.skill{
+		&_content{
+			width: 48%;
+			&+.skill_content{
+				margin-top: 0;
+			}
+			.about_list{
+				padding: 30px 20px 20px;
+			}
+			&:nth-of-type(even){
+				margin-left: 4%;
+			}
+		}
+	}
+}

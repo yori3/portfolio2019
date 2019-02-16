@@ -43,7 +43,7 @@
 
       <div class="skill_area about_area">
         <h2 class="about_area_ttl">Skill</h2>
-        <div class="skill_content">
+        <div class="skill_content tools">
           <h3 class="about_box_ttl">Tools</h3>
           <dl class="about_list">
             <dt class="about_label">Photoshop</dt>
@@ -60,7 +60,7 @@
             <dd class="about_txt">★★</dd>
           </dl>
         </div>
-        <div class="skill_content">
+        <div class="skill_content language">
           <h3 class="about_box_ttl">Language</h3>
           <dl class="about_list">
             <dt class="about_label">HTML</dt>

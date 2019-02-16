@@ -1,0 +1,297 @@
+/* main */
+.main{
+	.top &{
+		background-image: linear-gradient(to bottom, $bgColor 0%,$bgColor 10%,#fff 15%,);
+	}
+}
+
+.section{
+	padding: 50px 0;
+	&:nth-of-type(even),
+	.blog &,
+	.category &{
+		background-color: $bgColor;
+	}
+}
+
+.fadeBlock{
+	opacity: 0;
+	transition: .8s;
+	&.show{
+		opacity: 1;
+	}
+}
+
+.inner{
+	width: 93.75%;
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.cont_ttl{
+  margin-bottom: 30px;
+	color: $darkColor;
+  font-size: 2rem;
+	font-family: $enFont;
+  text-align: center;
+}
+
+.btn{
+	width: 100%;
+	&_body{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		width: 100%;
+		height: 60px;
+		border-radius: 30px;
+		background-color: $mainColor;
+		color: #fff;
+		font-size: 1.1rem;
+		&::after{
+			display: block;
+			position: absolute;
+			right: 4%;
+			top: 50%;
+			font-size: 1em;
+			font-weight: bold;
+			font-family: "ionicons";
+			transform: translateY(-50%);
+			content: "\f125";
+		}
+	}
+
+	&_return{
+		&::after{
+			right: 0;
+			left: 4%;
+			content: "\f124";
+		}
+	}
+}
+
+.btn_more{
+	margin: 30px auto 0;
+}
+
+.btn_top{
+	width: 93.75%;
+  margin: 50px auto;
+}
+
+.kv{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  position: relative;
+	line-height: 1;
+	z-index: 1;
+	&.page_kv{
+		background-image: url(images/kv_bg.jpg);
+		background-repeat: no-repeat;
+		background-position: center 20%;
+		background-size: cover;
+	}
+}
+
+.page_ttl{
+	width: 100%;
+	padding: 30px 0;
+	color: #fff;
+  font-size: 2.6rem;
+	font-family: $ttlFont;
+	font-weight: bold;
+  text-align: center;
+	background-color: rgba($darkColor,0.7);
+	.sub_title{
+	  display: block;
+	  font-size: .4em;
+	  font-weight: normal;
+	}
+}
+
+@media screen and (min-width:780px){
+	.main{
+		padding-top: 70px;
+    .top &{
+  		background-image: linear-gradient(to bottom, $bgColor 0%,$bgColor 15%,#fff 25%,);
+  	}
+	}
+
+  .section{
+		padding: 100px 0;
+  }
+
+  .cont_ttl{
+    margin-bottom: 60px;
+    font-size: 2.5rem;
+  }
+
+	.btn{
+		max-width: 340px;
+		&_body{
+			transition: .5s;
+			border: 1px solid $mainColor;
+			background-color: #fff;
+			color: $mainColor;
+			overflow: hidden;
+			z-index: 1;
+			&::before{
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 120%;
+				height: 500%;
+				background-color: $mainColor;
+				transform: rotate(10deg) scaleX(0) translate(0,-25%);
+				transform-origin: left top;
+				transition: .6s;
+				z-index: -1;
+				content: "";
+			}
+			&:hover{
+				color: #fff;
+				&::before{
+					transform: rotate(10deg) scaleX(1) translate(0,-25%);
+				}
+			}
+		}
+	}
+
+	.btn_more{
+		margin-top: 60px;
+	}
+
+  .btn_top{
+    width: 300px;
+    margin: 50px auto 100px;
+  }
+
+	.kv{
+		.wave{
+			top: 0;
+		}
+		&.page_kv{
+			height: 200px;
+		}
+	}
+
+	.page_ttl{
+		padding: .3em 0;
+		font-size: 4rem;
+	}
+
+}
+
+//top
+.kv_home{
+	width: 100%;
+	background-color: #fff;
+	overflow: hidden;
+  &::after{
+    display: block;
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-image: url(images/kv_bg.jpg);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0;
+		animation: fadeIn 4s reverse;
+    content: "";
+  }
+	.site_title{
+		position: relative;
+		width: 100%;
+		padding: 15px 0 20px;
+		color: $mainColor;
+		font-size: 4rem;
+		font-family: $ttlFont;
+	  text-shadow: 3px 3px 6px rgba(0,0,0,.3);
+	  line-height: 1;
+		text-align: center;
+		animation: fadeIn 4s;
+		z-index: 1;
+	}
+	.sub_title{
+	  display: block;
+	  font-size: .4em;
+	  font-weight: normal;
+	}
+}
+
+@keyframes fadeIn{
+	0%{
+		opacity: 0;
+	}
+	40%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+
+@media screen and (min-width:780px){
+	.kv_home{
+		height: 360px;
+		.site_title{
+			font-size: 7rem;
+		}
+	}
+}
+
+
+.wave{
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  // z-index: -1;
+}
+.bubble{
+  position: absolute;
+  bottom: 0;
+  left: 100px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-image: linear-gradient(to bottom, rgba($mainColor,.2) 0%, transparent 100%);
+  box-shadow: 5px 5px 10px rgba($mainColor,.1);
+  opacity: 0;
+  transform: translateY(0);
+  animation-name: bubble;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  z-index: 10;
+  @for $i from 1 through 20{
+    &.bubble0#{$i}{
+      animation-delay: .2s * $i;
+    }
+  }
+}
+@keyframes bubble {
+  0%{
+    transform: translateY(0);
+    opacity: 0;
+  }
+  25%{
+    opacity: .7;
+  }
+  75%{
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+}

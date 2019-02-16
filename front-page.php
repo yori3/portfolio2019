@@ -3,9 +3,13 @@
 <main id="main" class="main">
   <div class="kv kv_home">
     <h1 class="site_title"><?php bloginfo( 'name' ); ?><span class="sub_title"><?php bloginfo( 'description' ); ?></span></h1>
+    <div class="wave">
+      <canvas id="wave" width="3000" height="360"></canvas>
+    </div>
+    <!-- <div class="bubble"></div> -->
   </div>
 
-  <section class="section about_sec" id="about">
+  <section class="section about_sec fadeBlock" id="about">
     <div class="inner">
       <h2 class="cont_ttl"><span class="ttl_inner">About</span></h2>
       <div class="about_lead">
@@ -18,7 +22,7 @@
     </div>
   </section>
 
-  <section class="section blog_sec" id="blog">
+  <section class="section blog_sec fadeBlock" id="blog">
     <div class="inner">
       <h2 class="cont_ttl"><span class="ttl_inner">Blog</span></h2>
       <?php
@@ -55,7 +59,7 @@
     </div>
   </section>
 
-  <section class="section works_sec" id="works">
+  <section class="section works_sec fadeBlock" id="works">
     <div class="inner">
       <h2 class="cont_ttl"><span class="ttl_inner">Works</span></h2>
       <?php
