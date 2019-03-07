@@ -6,16 +6,16 @@
     <div class="wave">
       <canvas id="wave" width="3000" height="360"></canvas>
     </div>
-    <!-- <div class="bubble"></div> -->
   </div>
 
   <section class="section about_sec fadeBlock" id="about">
     <div class="inner">
       <h2 class="cont_ttl"><span class="ttl_inner">About</span></h2>
       <div class="about_lead">
-        <p>Webクリエイター　西村依泰（yori3）のポートフォリオサイトです。</p>
-        <p>サイト名の「WeST」は「Web creator's Study and Try」の略で、<br>このサイトを通して、Web制作に関する知識や技術を学び、<br>共有していくことを目的としています。</p>
-        <p>ブログなどを通して、新しく知ったことや、実践したことを発信し、<br>また、様々な情報を収集していき、<br>Webクリエイターとしての発展を目指しています。</p>
+        <?php
+        $page = get_page_by_path('about');
+        echo apply_filters ( 'the_content', $page -> post_content );
+         ?>
       </div>
 
       <div class="btn btn_more"><a href="<?php echo home_url(); ?>/about/" class="btn_body">詳しいプロフィールを見る</a></div>
@@ -92,11 +92,11 @@
           </div>
           <dl class="work_doc">
             <dt class="work_doc_label">サイト名</dt>
-            <dd class="work_doc_txt"><h3 class="work_ttl"><?php echo get_post_meta($post->ID, project_name, true); ?></h3></dd>
+            <dd class="work_doc_txt"><h3 class="work_ttl"><?php echo get_post_meta($post->ID, 'project_name', true); ?></h3></dd>
             <dt class="work_doc_label">URL</dt>
-            <dd class="work_doc_txt"><p class="work_url"><a href="<?php echo get_post_meta($post->ID, project_url, true); ?>"><?php echo get_post_meta($post->ID, project_url, true); ?></a></p></dd>
+            <dd class="work_doc_txt"><p class="work_url"><a href="<?php echo get_post_meta($post->ID, 'project_url', true); ?>"><?php echo get_post_meta($post->ID, 'project_url', true); ?></a></p></dd>
             <dt class="work_doc_label">公開日<br>（制作日）</dt>
-            <dd class="work_doc_txt"><time class="work_date"><?php echo get_post_meta($post->ID, project_date, true); ?></time></dd>
+            <dd class="work_doc_txt"><time class="work_date"><?php echo get_post_meta($post->ID, 'project_date', true); ?></time></dd>
             <dt class="work_doc_label">概要</dt>
             <dd class="work_doc_txt">
               <p class="work_content"><?php

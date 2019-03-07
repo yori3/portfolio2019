@@ -115,7 +115,7 @@
 	.main{
 		padding-top: 70px;
     .top &{
-  		background-image: linear-gradient(to bottom, $bgColor 0%,$bgColor 15%,#fff 25%,);
+  		background-image: linear-gradient(to bottom, $bgColor 0%,$bgColor 15%,#fff 20%,);
   	}
 	}
 
@@ -274,7 +274,7 @@
   z-index: 10;
   @for $i from 1 through 20{
     &.bubble0#{$i}{
-      animation-delay: .2s * $i;
+      animation-delay: .3s * $i;
     }
   }
 }

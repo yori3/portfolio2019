@@ -1,7 +1,8 @@
 <?php get_header(); ?>
 
 <main id="main" class="main">
-
+<?php if (have_posts()) : ?>
+  <?php while (have_posts()) : the_post(); ?>
   <div class="kv page_kv">
     <h1 class="page_ttl"><span class="ttl_inner"><?php the_title(); ?></span></h1>
   </div>
@@ -12,9 +13,7 @@
     <div class="inner">
 
       <div class="about_lead">
-        <p>Webクリエイター　西村依泰（yori3）のポートフォリオサイトです。</p>
-        <p>サイト名の「WeST」は「Web creator's Study and Try」の略で、<br>このサイトを通して、Web制作に関する知識や技術を学び、<br>共有していくことを目的としています。</p>
-        <p>ブログなどを通して、新しく知ったことや、実践したことを発信し、<br>また、様々な情報を収集していき、<br>Webクリエイターとしての発展を目指しています。</p>
+        <?php the_content(); ?>
       </div>
 
 
@@ -79,6 +78,9 @@
     </div>
 
   </section>
+
+  <?php endwhile; ?>
+  <?php endif; ?>
 </main>
 
 <?php get_footer(); ?>
