@@ -6,35 +6,6 @@
 	}
 }
 
-body,html{
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  vertical-align: baseline;
-  background: transparent;
-	color: $textColor;
-	font-size: 14px;
-	letter-spacing: 0.08em;
-	// font-family:Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
-	font-family: 'Hind Siliguri', "Noto Sans Japanese", sans-serif;
-}
-
-@media screen and (min-width:640px){
-	html,body{font-size: 16px;}
-}
-
-@media screen and (max-width:320px){
-	html,body{font-size: 12px;}
-}
-
-
-body{
-  line-height: 1;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-
 div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -55,7 +26,16 @@ time, mark, audio, video {
   vertical-align: baseline;
   background: transparent;
 }
-article, header, footer, aside, figure, figcaption, nav, section {
+
+main,
+article,
+header,
+footer,
+aside,
+figure,
+figcaption,
+nav,
+section {
   display:block;
 }
 
@@ -87,9 +67,31 @@ input,textarea{
 	outline-color: $mainColor;
 }
 
-@font-face {
-  font-family: "PixelMplus10";
-  src: url("font/PixelMplus10-Regular.woff") format("woff"), url("font/PixelMplus10-Regular.ttf") format("truetype");
+body,html{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+	color: $textColor;
+	font-size: 14px;
+	font-family: 'Hind Siliguri', "Noto Sans Japanese", sans-serif;
+}
+
+@media screen and (min-width:640px){
+	html,body{font-size: 16px;}
+}
+
+@media screen and (max-width:320px){
+	html,body{font-size: 12px;}
+}
+
+body{
+	letter-spacing: 0.05em;
+  line-height: 1;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 .pc{
