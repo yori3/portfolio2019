@@ -9,7 +9,7 @@
   <section class="section">
 
     <h2 class="cont_ttl">
-      <?php if(in_category('trying')): ?>
+      <!-- <?php if(in_category('trying')): ?>
         <span class="ttl_inner">Web Trying</span>
       <?php elseif(in_category('webstory')): ?>
         <span class="ttl_inner">Web Story</span>
@@ -19,7 +19,11 @@
         <span class="ttl_inner">Feeling</span>
       <?php else : ?>
         <span class="ttl_inner">NEWS</span>
-      <?php endif; ?>
+      <?php endif; ?> -->
+      <?php
+      $cat_info = get_category( $cat );
+       ?>
+      <h2 class="cont_ttl"><span class="ttl_inner"><?php echo esc_html( $cat_info->name ); ?></span></h2>
     </h2>
 
     <div class="inner">

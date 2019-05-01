@@ -213,10 +213,10 @@ echo $str;
 }
 
 
-add_action( 'admin_print_footer_scripts', 'limit_category_select' );
+// add_action( 'admin_print_footer_scripts', 'limit_category_select' );
 function limit_category_select() {
 	?>
-	<script type="text/javascript">
+	<!-- <script type="text/javascript">
 		jQuery(function($) {
 			// 投稿画面のカテゴリー選択を制限
 			var cat_checklist = $('.categorychecklist input[type=checkbox]');
@@ -234,7 +234,7 @@ function limit_category_select() {
 
 			$('.categorychecklist>li:first-child, .cat-checklist>li:first-child').before('<p style="padding-top:5px;">カテゴリーは1つしか選択できません</p>');
 		});
-	</script>
+	</script> -->
 	<?php
 }
 

@@ -9,8 +9,8 @@
 </footer>
 
 <div class="cookie_box">
-  <p class="inner">当サイトではクッキーを利用しています。 We use cookies on this site.<br><a href="<?php echo home_url(); ?>/privacy/">Read my privacy polisy.</a></p>
-  <div class="cookie_box_close">閉じる</div>
+  <p class="inner">当サイトではクッキーを利用しています。 <br>We use cookies on this site.<a href="<?php echo home_url(); ?>/privacy/">Read my privacy polisy.</a></p>
+  <div class="cookie_box_close"></div>
 </div>
 
 <?php wp_footer(); ?>
