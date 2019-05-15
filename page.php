@@ -9,7 +9,7 @@
   <?php breadcrumb(); ?>
 
   <section class="section">
-    <div class="inner post_content article_content">
+    <div class="inner contents">
       <?php the_content(); ?>
     </div>
 

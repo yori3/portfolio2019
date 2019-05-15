@@ -22,7 +22,7 @@ if (have_posts()) :
   </div>
 </div>
 
-<div class="article_content post_content">
+<div class="post_content contents">
   <?php the_content(); ?>
 </div>
 

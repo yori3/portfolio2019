@@ -3,9 +3,9 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('sass', done => {
-  gulp.src('*.scss')
+  gulp.src('./scss/*.scss')
   .pipe(sass({outputStyle: 'expanded'}))
-  .pipe(gulp.dest('./'))
+  .pipe(gulp.dest('./css/'))
   .pipe(autoprefixer({
     browsers: ['last 2 versions'],
   }))
