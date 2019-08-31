@@ -15,6 +15,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri:400,600|Press+Start+2P|Orbitron:400,700|Poppins:400,600" rel="stylesheet">
 <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
+
+<meta name="description" content="Webクリエイター　西村依泰（yori3）のポートフォリオサイトです。ブログなどを通して、新しく知ったことや、実践したことを発信し、また、様々な情報を収集していき、Webクリエイターとしての発展を目指しています。">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="<?php echo home_url();?>">
+<meta property="og:site_name" content="<?php bloginfo( 'name' ); ?>">
+<meta property="og:title" content="<?php bloginfo( 'name' ); ?>">
+<meta property="og:description" content="Webクリエイター　西村依泰（yori3）のポートフォリオサイトです。ブログなどを通して、新しく知ったことや、実践したことを発信し、また、様々な情報を収集していき、Webクリエイターとしての発展を目指しています。">
+<meta property="og:image" content="<?php echo get_template_directory_uri()?>/images/ogp.jpg">
+
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?> id="top">
@@ -35,6 +45,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <nav class="gnav">
       <button class="gnav_toggle"><span class="gnav_toggle_body"></span></button>
       <ul class="gnav_inner">
+        <li class="gnav_item"><a href="<?php echo home_url(); ?>" class="gnav_body">トップページ</a></li>
         <li class="gnav_item"><a href="<?php echo home_url(); ?>/about/" class="gnav_body">プロフィール</a></li>
         <li class="gnav_item"><a href="<?php echo home_url(); ?>/blog/" class="gnav_body">ブログ</a></li>
         <li class="gnav_item"><a href="<?php if(!is_front_page()){ echo home_url();} ?>#works" class="gnav_body">実績</a></li>

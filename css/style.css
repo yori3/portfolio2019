@@ -80,19 +80,13 @@ body, html {
   vertical-align: baseline;
   background: transparent;
   color: #36454d;
-  font-size: 14px;
+  font-size: calc(100vw / 37.5 * 1.4);
   font-family: 'Hind Siliguri', "Noto Sans Japanese", sans-serif;
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 780px) {
   html, body {
     font-size: 16px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  html, body {
-    font-size: 12px;
   }
 }
 

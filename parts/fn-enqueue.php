@@ -21,7 +21,7 @@ function mypage_scripts(){
 
   if(is_front_page()){
 		wp_css('top');
-  }elseif(is_home() || is_date() || is_single()) {
+  }elseif(is_home() || is_date() || is_single() || is_category()) {
 		wp_css('prism');
 		wp_css('blog');
   }elseif(is_post_type_archive() || is_tax()) {
