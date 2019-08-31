@@ -18,7 +18,3 @@ $ttlFont: 'Poppins', sans-serif;
 $enFont: 'Poppins', sans-serif;
 $pixelTtlFont: 'Press Start 2P', sans-serif;
 $pixelFont: 'PixelMplus10', sans-serif;
-
-@function p2v($px){
-  @return ($px / 750 * 100vw);
-}
