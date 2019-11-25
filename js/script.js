@@ -2,7 +2,7 @@ $('.btn_totop').hide();
 
 $(window).scroll(function(){
 
-	var fvheight = $('.main').offset().top;
+	let fvheight = $('.main').offset().top;
 
 	if($(window).scrollTop() > fvheight){
 			$('.btn_totop').fadeIn(500);
@@ -17,7 +17,7 @@ $(window).scroll(function(){
 	});
 });
 
-var currentScrPoint;
+let currentScrPoint;
  $('.gnav_toggle').on('click',function(){
 	 if($('.gnav').hasClass('open')){
 		 $('.gnav').removeClass('open');
@@ -61,7 +61,7 @@ $('a[href^="#"]').on('click',function(e){
 
 $('.fadeBlock').each(function(){
 	if($(this).length){
-		var fadePos = $(this).offset().top;
+		const fadePos = $(this).offset().top;
 	}
 	$(window).on('scroll',()=>{
 		var scrPos = $(window).scrollTop();
@@ -72,50 +72,50 @@ $('.fadeBlock').each(function(){
 })
 
 //　KV泡
-
-var min = 1;
-var max = 20;
-var minSize = 5;
-var maxSize = 9;
-
-var spFlag = false;
-var pcFlag = false;
-
-$(window).on('load resize',function(){
-	var winW = $(window).width();
-	if(winW > 780 && !pcFlag){
-		pcFlag = true;
-		spFlag = false;
-		for(var i = 0;i < 20;i++){
-			$('.kv_home').prepend('<div class="bubble"></div>');
-		}
-
-		$('.bubble').each(function(){
-			var index = $('.bubble').index(this);
-			var randNum = Math.floor( Math.random() * (max + 1 - min) ) + min ;
-			var bubbleSize = Math.floor( Math.random() * (maxSize + 1 - minSize) ) + minSize ;
-			$(this).css({
-				'left': (index) * 5+'%',
-				'width': bubbleSize * 5,
-				'height': bubbleSize * 5
-			}).addClass('bubble0'+randNum);
-
-		});
-
-	}else if(winW <= 780 && !spFlag){
-		spFlag = true;
-		pcFlag = false;
-		$('.bubble').remove();
-	}
-
-});
+//
+// var min = 1;
+// var max = 20;
+// var minSize = 5;
+// var maxSize = 9;
+//
+// var spFlag = false;
+// var pcFlag = false;
+//
+// $(window).on('load resize',function(){
+// 	var winW = $(window).width();
+// 	if(winW > 780 && !pcFlag){
+// 		pcFlag = true;
+// 		spFlag = false;
+// 		for(var i = 0;i < 20;i++){
+// 			$('.kv_home').prepend('<div class="bubble"></div>');
+// 		}
+//
+// 		$('.bubble').each(function(){
+// 			var index = $('.bubble').index(this);
+// 			var randNum = Math.floor( Math.random() * (max + 1 - min) ) + min ;
+// 			var bubbleSize = Math.floor( Math.random() * (maxSize + 1 - minSize) ) + minSize ;
+// 			$(this).css({
+// 				'left': (index) * 5+'%',
+// 				'width': bubbleSize * 5,
+// 				'height': bubbleSize * 5
+// 			}).addClass('bubble0'+randNum);
+//
+// 		});
+//
+// 	}else if(winW <= 780 && !spFlag){
+// 		spFlag = true;
+// 		pcFlag = false;
+// 		$('.bubble').remove();
+// 	}
+//
+// });
 
 
 
 // フォームバリデーション
-var flagFormName = false;
-var flagFormEmail = false;
-var flagFormMessage = false;
+let flagFormName = false;
+let flagFormEmail = false;
+let flagFormMessage = false;
 formValidate();
 
 $('input[name="name"]').on('blur keyup',function(){
