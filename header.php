@@ -37,11 +37,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <header class="header" id="header">
   <div class="header_main">
-    <!-- <div class="site_logo"><a href="<?php echo home_url(); ?>">
+    <div class="site_logo"><a href="<?php echo home_url(); ?>">
       <svg class="logo_mark">
         <use xlink:href="#logo"/>
       </svg>
-    </a></div> -->
+    </a></div>
     <nav class="gnav">
       <button class="gnav_toggle"><span class="gnav_toggle_body"></span></button>
       <ul class="gnav_inner">
