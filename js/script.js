@@ -61,7 +61,7 @@ $('a[href^="#"]').on('click',function(e){
 
 $('.fadeBlock').each(function(){
 	if($(this).length){
-		const fadePos = $(this).offset().top;
+		var fadePos = $(this).offset().top;
 	}
 	$(window).on('scroll',()=>{
 		var scrPos = $(window).scrollTop();

@@ -3,9 +3,9 @@
 <main id="main" class="main">
   <div class="kv kv_home">
     <h1 class="site_title"><?php bloginfo( 'name' ); ?><span class="sub_title"><?php bloginfo( 'description' ); ?></span></h1>
-    <div class="wave">
+    <!-- <div class="wave">
       <canvas id="wave" width="3000" height="360"></canvas>
-    </div>
+    </div> -->
   </div>
 
   <section class="section about_sec fadeBlock" id="about">
