@@ -73,42 +73,42 @@ $('.fadeBlock').each(function(){
 
 //　KV泡
 
-var min = 1;
-var max = 20;
-var minSize = 5;
-var maxSize = 9;
-
-var spFlag = false;
-var pcFlag = false;
-
-$(window).on('load resize',function(){
-	var winW = $(window).width();
-	if(winW > 780 && !pcFlag){
-		pcFlag = true;
-		spFlag = false;
-		for(var i = 0;i < 20;i++){
-			$('.kv_home').prepend('<div class="bubble"></div>');
-		}
-
-		$('.bubble').each(function(){
-			var index = $('.bubble').index(this);
-			var randNum = Math.floor( Math.random() * (max + 1 - min) ) + min ;
-			var bubbleSize = Math.floor( Math.random() * (maxSize + 1 - minSize) ) + minSize ;
-			$(this).css({
-				'left': (index) * 5+'%',
-				'width': bubbleSize * 5,
-				'height': bubbleSize * 5
-			}).addClass('bubble0'+randNum);
-
-		});
-
-	}else if(winW <= 780 && !spFlag){
-		spFlag = true;
-		pcFlag = false;
-		$('.bubble').remove();
-	}
-
-});
+// var min = 1;
+// var max = 20;
+// var minSize = 5;
+// var maxSize = 9;
+//
+// var spFlag = false;
+// var pcFlag = false;
+//
+// $(window).on('load resize',function(){
+// 	var winW = $(window).width();
+// 	if(winW > 780 && !pcFlag){
+// 		pcFlag = true;
+// 		spFlag = false;
+// 		for(var i = 0;i < 20;i++){
+// 			$('.kv_home').prepend('<div class="bubble"></div>');
+// 		}
+//
+// 		$('.bubble').each(function(){
+// 			var index = $('.bubble').index(this);
+// 			var randNum = Math.floor( Math.random() * (max + 1 - min) ) + min ;
+// 			var bubbleSize = Math.floor( Math.random() * (maxSize + 1 - minSize) ) + minSize ;
+// 			$(this).css({
+// 				'left': (index) * 5+'%',
+// 				'width': bubbleSize * 5,
+// 				'height': bubbleSize * 5
+// 			}).addClass('bubble0'+randNum);
+//
+// 		});
+//
+// 	}else if(winW <= 780 && !spFlag){
+// 		spFlag = true;
+// 		pcFlag = false;
+// 		$('.bubble').remove();
+// 	}
+//
+// });
 
 
 
