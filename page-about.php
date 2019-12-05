@@ -44,35 +44,28 @@
         <h2 class="about_area_ttl">Skill</h2>
         <div class="skill_content tools">
           <h3 class="about_box_ttl">Tools</h3>
-          <dl class="about_list">
-            <dt class="about_label">Photoshop</dt>
-            <dd class="about_txt">★★★★</dd>
-            <dt class="about_label">Illustrator</dt>
-            <dd class="about_txt">★★</dd>
-            <dt class="about_label">Dreamweaver</dt>
-            <dd class="about_txt">★★★★</dd>
-            <dt class="about_label">Atom</dt>
-            <dd class="about_txt">★★★★</dd>
-            <dt class="about_label">Google Analytics</dt>
-            <dd class="about_txt">★★★</dd>
-            <dt class="about_label">Github</dt>
-            <dd class="about_txt">★★</dd>
-          </dl>
+          <ul class="about_list">
+            <li class="about_txt">Photoshop</li>
+            <li class="about_txt">Illustrator</li>
+            <li class="about_txt">Adobe XD</li>
+            <li class="about_txt">Dreamweaver</li>
+            <li class="about_txt">Atom</li>
+            <li class="about_txt">Google Analytics</li>
+            <li class="about_txt">Github</li>
+          </ul>
         </div>
         <div class="skill_content language">
           <h3 class="about_box_ttl">Language</h3>
-          <dl class="about_list">
-            <dt class="about_label">HTML</dt>
-            <dd class="about_txt">★★★★</dd>
-            <dt class="about_label">CSS</dt>
-            <dd class="about_txt">★★★★★</dd>
-            <dt class="about_label">jQuery</dt>
-            <dd class="about_txt">★★★★</dd>
-            <dt class="about_label">PHP</dt>
-            <dd class="about_txt">★★★</dd>
-            <dt class="about_label">WordPress</dt>
-            <dd class="about_txt">★★★★</dd>
-          </dl>
+          <ul class="about_list">
+            <li class="about_txt">HTML</li>
+            <li class="about_txt">CSS</li>
+            <li class="about_txt">SCSS</li>
+            <li class="about_txt">Javascript</li>
+            <li class="about_txt">jQuery</li>
+            <li class="about_txt">Vue.js</li>
+            <li class="about_txt">PHP</li>
+            <li class="about_txt">WordPress</li>
+          </ul>
         </div>
       </div>
     </div>

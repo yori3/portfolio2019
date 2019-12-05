@@ -50,7 +50,7 @@
   background-color: #fff;
   margin-bottom: 1em;
   font-size: 1.5rem;
-  transform: translate(0.5em, -50%);
+  transform: translate(0.5em, -56%);
 }
 
 .about_box_ttl::before {
@@ -117,17 +117,22 @@
 }
 
 .skill_content + .skill_content {
-  margin-top: 30px;
+  margin-top: 10.66667vw;
 }
 
 .skill_content .about_list {
-  padding: 20px 15px 15px;
+  padding: 8vw 5.33333vw 6.66667vw;
 }
 
 .skill_content .about_txt {
+  padding-bottom: 0;
   color: #61a6c6;
-  font-size: 1.2em;
-  letter-spacing: 0.5em;
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+}
+
+.skill_content .about_txt + .about_txt {
+  margin-top: 1em;
 }
 
 @media screen and (min-width: 780px) {
@@ -163,7 +168,7 @@
     border-width: 17px;
   }
   .about_box_ttl {
-    transform: translate(20px, -50%);
+    transform: translate(20px, -56%);
   }
   .profile_img {
     width: 40%;
@@ -180,7 +185,7 @@
     margin-top: 0;
   }
   .skill_content .about_list {
-    padding: 30px 20px 20px;
+    padding: 40px 30px;
   }
   .skill_content:nth-of-type(even) {
     margin-left: 4%;

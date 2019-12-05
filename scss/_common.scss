@@ -132,7 +132,7 @@
 		transform: rotateY(-120deg);
 		transform-origin: 100% 0 0;
 		transition: transform .8s;
-		@for $i from 1 through 4 {
+		@for $i from 1 through 5 {
 		  &:nth-child(#{$i}) {
 		    transition-delay: #{0.1 * $i}s;
 		  }

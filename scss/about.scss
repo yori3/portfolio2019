@@ -59,7 +59,7 @@
 		background-color: #fff;
 		margin-bottom: 1em;
 		font-size: 1.5rem;
-		transform: translate(.5em,-50%);
+		transform: translate(.5em,-56%);
 		&::before{
 			display: inline-block;
 			position: relative;
@@ -124,15 +124,19 @@
 		border: 2px solid $mainColor;
 		border-radius: 5px;
 		&+.skill_content{
-			margin-top: 30px;
+			margin-top: p2v(80);
 		}
 		.about_list{
-			padding: 20px 15px 15px;
+			padding: p2v(60) p2v(40) p2v(50);
 		}
 		.about_txt{
+			padding-bottom: 0;
 			color: $mainColor;
-			font-size: 1.2em;
-			letter-spacing: 0.5em;
+			font-size: 1.4rem;
+			letter-spacing: 0.05em;
+			&+.about_txt{
+				margin-top: 1em;
+			}
 		}
 	}
 }
@@ -176,7 +180,7 @@
 		}
 
 		&_box_ttl{
-			transform: translate(20px, -50%)
+			transform: translate(20px, -56%)
 		}
 	}
 
@@ -198,7 +202,7 @@
 				margin-top: 0;
 			}
 			.about_list{
-				padding: 30px 20px 20px;
+				padding: 40px 30px;
 			}
 			&:nth-of-type(even){
 				margin-left: 4%;
