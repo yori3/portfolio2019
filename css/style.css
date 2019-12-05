@@ -80,13 +80,19 @@ body, html {
   vertical-align: baseline;
   background: transparent;
   color: #36454d;
-  font-size: calc(100vw / 37.5 * 1.4);
+  font-size: 14px;
   font-family: 'Hind Siliguri', "Noto Sans Japanese", sans-serif;
 }
 
-@media screen and (min-width: 780px) {
+@media screen and (min-width: 640px) {
   html, body {
     font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  html, body {
+    font-size: 12px;
   }
 }
 
@@ -755,7 +761,7 @@ body {
 .kv_home .site_title {
   position: relative;
   width: 100%;
-  padding: 15px 0 20px;
+  padding: 30px 0 40px;
   color: #61a6c6;
   font-size: 4rem;
   font-family: "Poppins", sans-serif;

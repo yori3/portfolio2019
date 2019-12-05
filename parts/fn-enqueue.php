@@ -27,12 +27,13 @@ function mypage_scripts(){
   }elseif(is_post_type_archive() || is_tax()) {
     $post_type = get_post_type( $post );
     wp_css($post_type);
+  }elseif(is_page('privacy')){
+
   }elseif(is_page()){
     $page = get_post( get_the_ID() );
     $parent_id = $page->post_parent;
     $parent_slug = get_post($parent_id)->post_name;
     if($parent_id != 0){
-    var_dump($parent_slug);
       wp_css($parent_slug);
     }else{
       $slug_name = basename(get_permalink());

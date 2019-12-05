@@ -37,18 +37,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <header class="header" id="header">
   <div class="header_main">
-    <!-- <div class="site_logo"><a href="<?php echo home_url(); ?>">
+    <div class="site_logo"><a href="<?php echo home_url(); ?>">
       <svg class="logo_mark">
         <use xlink:href="#logo"/>
       </svg>
-    </a></div> -->
+    </a></div>
     <nav class="gnav">
       <button class="gnav_toggle"><span class="gnav_toggle_body"></span></button>
       <ul class="gnav_inner">
         <li class="gnav_item"><a href="<?php echo home_url(); ?>" class="gnav_body">トップページ</a></li>
-        <li class="gnav_item"><a href="<?php echo home_url(); ?>/about/" class="gnav_body">プロフィール</a></li>
         <li class="gnav_item"><a href="<?php echo home_url(); ?>/blog/" class="gnav_body">ブログ</a></li>
-        <li class="gnav_item"><a href="<?php if(!is_front_page()){ echo home_url();} ?>#works" class="gnav_body">実績</a></li>
         <li class="gnav_item"><a href="<?php echo home_url(); ?>/contact/" class="gnav_body">お問い合わせ</a></li>
       </ul>
     </nav>

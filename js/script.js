@@ -72,7 +72,7 @@ $('.fadeBlock').each(function(){
 })
 
 //　KV泡
-//
+
 // var min = 1;
 // var max = 20;
 // var minSize = 5;
