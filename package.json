@@ -5,11 +5,19 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp default"
+    "build:gulp": "gulp default",
+    "build:babel": "babel js/src -d js/editor --watch",
+    "build": "npm run build:gulp & npm run build:babel"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yori3/portfolio2019.git"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      "es2015"
+    ]
   },
   "author": "",
   "license": "ISC",
@@ -18,6 +26,10 @@
   },
   "homepage": "https://github.com/yori3/portfolio2019#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-watch": "^7.0.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-sass": "^4.0.2",
     "webpack": "^4.29.6"

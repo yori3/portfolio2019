@@ -117,11 +117,11 @@
 }
 
 .skill_content + .skill_content {
-  margin-top: p2v(80);
+  margin-top: 10.66667vw;
 }
 
 .skill_content .about_list {
-  padding: p2v(60) p2v(40) p2v(50);
+  padding: 8vw 5.33333vw 6.66667vw;
 }
 
 .skill_content .about_txt {

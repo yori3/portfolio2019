@@ -98,6 +98,24 @@ function arphabet_widgets_init() {
 }
 add_action( 'widgets_init', 'arphabet_widgets_init' );
 
+if ( ! function_exists( 'lab_setup' ) ) :
+
+function lab_setup() {
+
+	register_nav_menus( array(
+		'global' => 'グローバルナビ',
+	) );
+
+}
+endif;
+add_action( 'after_setup_theme', 'lab_setup' );
+
+function add_my_assets_to_block_editor() {
+    wp_enqueue_style( 'block-style', get_stylesheet_directory_uri() . '/css/editor/block_style.css' );
+    wp_enqueue_script( 'block-custom', get_stylesheet_directory_uri() . '/js/editor/block_custom.js',array(), "", true);
+}
+add_action( 'enqueue_block_editor_assets', 'add_my_assets_to_block_editor' );
+
 
 // ビジュアルエディタ用CSS
 add_editor_style('editor-style.css');
