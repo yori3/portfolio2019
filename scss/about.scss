@@ -10,8 +10,6 @@
 		&_ttl{
 			position: relative;
 			margin-bottom: 30px;
-			// padding-left: 15px;
-			// color: $darkColor;
 			font-size: 1.8rem;
 			&:first-letter{
 				color: $darkColor;
@@ -29,15 +27,38 @@
 				height: 2px;
 				background-color: $darkColor;
 			}
-			// &::after{
-			// 	bottom: -10px;
-			// 	border: 8px solid transparent;
-			// 	border-top: 8px solid $darkColor;
-			// 	transform: rotate(-45deg);
-			// }
 		}
 		&.skill_area{
 			margin-top: 30px;
+		}
+
+		dt{
+			display: inline-block;
+			position: relative;
+			margin-bottom: 10px;
+			padding: .2em .5em;
+			background-color: $mainColor;
+			color: #fff;
+			font-size: 1.1rem;
+			font-weight: bold;
+			&::after{
+				display: block;
+				position: absolute;
+				right: -15px;
+				bottom: -15px;
+				border: 15px solid transparent;
+				border-top: 15px solid $mainColor;
+				transform: rotate(45deg);
+				content: "";
+			}
+		}
+		dd{
+			padding-left: 1em;
+			padding-bottom: 1.5em;
+			line-height: 1.3;
+			&:last-of-type{
+				padding-bottom: 0;
+			}
 		}
 	}
 
@@ -82,34 +103,6 @@
 			color: $mainColor;
 		}
 	}
-	&_label{
-		display: inline-block;
-		position: relative;
-		margin-bottom: 10px;
-		padding: .2em .5em;
-		background-color: $mainColor;
-		color: #fff;
-		font-size: 1.1rem;
-		font-weight: bold;
-		&::after{
-			display: block;
-			position: absolute;
-			right: -15px;
-			bottom: -15px;
-			border: 15px solid transparent;
-			border-top: 15px solid $mainColor;
-			transform: rotate(45deg);
-			content: "";
-		}
-	}
-	&_txt{
-		padding-left: 1em;
-		padding-bottom: 1.5em;
-		line-height: 1.3;
-		&:last-of-type{
-			padding-bottom: 0;
-		}
-	}
 }
 
 .profile{
@@ -126,15 +119,16 @@
 		&+.skill_content{
 			margin-top: p2v(80);
 		}
-		.about_list{
+		ul{
 			padding: p2v(60) p2v(40) p2v(50);
 		}
-		.about_txt{
-			padding-bottom: 0;
+		li{
+			padding-left: 1em;
 			color: $mainColor;
 			font-size: 1.4rem;
+			line-height: 1.3;
 			letter-spacing: 0.05em;
-			&+.about_txt{
+			&+li{
 				margin-top: 1em;
 			}
 		}
@@ -171,7 +165,7 @@
 			font-size: 1.1rem;
 		}
 
-		&_label{
+		dt{
 			&::after{
 				right: -17px;
 				bottom: -17px;
@@ -201,7 +195,7 @@
 			&+.skill_content{
 				margin-top: 0;
 			}
-			.about_list{
+			ul{
 				padding: 40px 30px;
 			}
 			&:nth-of-type(even){
