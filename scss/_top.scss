@@ -1,0 +1,32 @@
+//top
+.kv_home{
+	width: 100%;
+	overflow: hidden;
+	.site_title{
+		position: relative;
+		width: 100%;
+		padding: 30px 0 40px;
+		color: $mainColor;
+		font-size: 4rem;
+		font-family: $ttlFont;
+	  text-shadow: 3px 3px 6px rgba(0,0,0,.3);
+	  line-height: 1;
+		text-align: center;
+		z-index: 1;
+	}
+	.sub_title{
+	  display: block;
+	  font-size: .4em;
+	  font-weight: normal;
+	}
+}
+
+
+@media screen and (min-width:780px){
+	.kv_home{
+		height: 360px;
+		.site_title{
+			font-size: 7rem;
+		}
+	}
+}

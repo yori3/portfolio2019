@@ -19,29 +19,6 @@ function mypage_scripts(){
 
 	wp_css('style');
 
-  if(is_front_page()){
-		wp_css('top');
-  }elseif(is_home() || is_date() || is_single() || is_category()) {
-		wp_css('prism');
-		wp_css('blog');
-  }elseif(is_post_type_archive() || is_tax()) {
-    $post_type = get_post_type( $post );
-    wp_css($post_type);
-  }elseif(is_page('privacy')){
-
-  }elseif(is_page()){
-    $page = get_post( get_the_ID() );
-    $parent_id = $page->post_parent;
-    $parent_slug = get_post($parent_id)->post_name;
-    if($parent_id != 0){
-      wp_css($parent_slug);
-    }else{
-      $slug_name = basename(get_permalink());
-      wp_css($slug_name);
-    }
-  }
-
-
 	wp_deregister_script('jquery');
 	wp_enqueue_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js','', '20170716', false );
 	wp_enqueue_script( '', '//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js','', '', true );
