@@ -1,5 +1,30 @@
 'use strict';
 
+//カスタムクラス
+
+//コードシンタックスブロック
+wp.blocks.registerBlockStyle('core/code', {
+  name: 'language-html',
+  label: 'HTMLシンタックス',
+  isDefault: false
+});
+wp.blocks.registerBlockStyle('core/code', {
+  name: 'language-css',
+  label: 'CSSシンタックス',
+  isDefault: false
+});
+wp.blocks.registerBlockStyle('core/code', {
+  name: 'language-js',
+  label: 'JSシンタックス',
+  isDefault: false
+});
+wp.blocks.registerBlockStyle('core/code', {
+  name: 'language-php',
+  label: 'phpシンタックス',
+  isDefault: false
+});
+
+//カスタムブロック
 var registerBlockType = wp.blocks.registerBlockType;
 // const { RichText }          = wp.editor;
 
@@ -24,7 +49,6 @@ registerBlockType('yori3/section', {
     var attributes = _ref.attributes,
         className = _ref.className;
 
-    // 許可されるブロックを登録
     return React.createElement(
       'div',
       { className: className },

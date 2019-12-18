@@ -1,3 +1,29 @@
+//カスタムクラス
+
+//コードシンタックスブロック
+wp.blocks.registerBlockStyle( 'core/code', {
+	name: 'language-html',
+	label: 'HTMLシンタックス',
+	isDefault: false,
+} );
+wp.blocks.registerBlockStyle( 'core/code', {
+	name: 'language-css',
+	label: 'CSSシンタックス',
+	isDefault: false,
+} );
+wp.blocks.registerBlockStyle( 'core/code', {
+	name: 'language-js',
+	label: 'JSシンタックス',
+	isDefault: false,
+} );
+wp.blocks.registerBlockStyle( 'core/code', {
+	name: 'language-php',
+	label: 'phpシンタックス',
+	isDefault: false,
+} );
+
+
+//カスタムブロック
 const { registerBlockType } = wp.blocks;
 // const { RichText }          = wp.editor;
 const { InnerBlocks } = wp.editor;
@@ -17,7 +43,6 @@ registerBlockType( 'yori3/section', {
   },
 
   edit({attributes, className}){
-  // 許可されるブロックを登録
     return (
       <div className={className}>
         <InnerBlocks templateLock={false} />
