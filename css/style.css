@@ -1276,16 +1276,16 @@ body {
   font-family: "ionicons";
 }
 
-[class*="-tools"] .skill__content h3::before {
+.skill__content h3::first-letter {
+  color: #61a6c6;
+}
+
+.skill__content.skill__content-tools h3::before {
   content: "\f2ad";
 }
 
-[class*="-language"] .skill__content h3::before {
+.skill__content.skill__content-language h3::before {
   content: "\f271";
-}
-
-.skill__content h3::first-letter {
-  color: #61a6c6;
 }
 
 .skill__content ul {

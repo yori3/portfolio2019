@@ -98,18 +98,22 @@
 			color: $mainColor;
 			font-family: "ionicons";
 		}
-		[class*="-tools"] &{
+		&::first-letter{
+			color: $mainColor;
+		}
+	}
+	&.skill__content-tools{
+		h3{
 			&::before{
 				content: "\f2ad"
 			}
 		}
-		[class*="-language"] &{
+	}
+	&.skill__content-language{
+		h3{
 			&::before{
 				content: "\f271";
 			}
-		}
-		&::first-letter{
-			color: $mainColor;
 		}
 	}
 	ul{
