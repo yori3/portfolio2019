@@ -1,9 +1,9 @@
 <?php get_header(); ?>
 
 <main id="main" class="main">
-
+  <?php $postTypeSlug = get_query_var('post_type'); ?>
   <div class="kv page_kv">
-    <h1 class="page_ttl"><span class="ttl_inner">Blog</span></h1>
+    <h1 class="page_ttl"><span class="ttl_inner"><?php echo $postTypeSlug; ?></span></h1>
   </div>
 
   <?php breadcrumb(); ?>
@@ -52,8 +52,8 @@
              'total' => $wp_query->max_num_pages,
              'mid_size' => 1,
              'current' => ($paged ? $paged : 1),
-             'prev_text' => '<',
-             'next_text' => '>',
+             'prev_text' => '',
+             'next_text' => '',
          )); ?>
      </div>
     </div>

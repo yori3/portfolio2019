@@ -25,7 +25,7 @@ wp.blocks.registerBlockStyle( 'core/code', {
 
 //カスタムブロック
 const { registerBlockType } = wp.blocks;
-// const { RichText }          = wp.editor;
+const { RichText } = wp.editor;
 const { InnerBlocks } = wp.editor;
 
 registerBlockType( 'yori3/section', {
@@ -60,3 +60,84 @@ registerBlockType( 'yori3/section', {
     )
   }
 } );
+
+registerBlockType( 'works/definition', {
+
+	  title: 'works-definition',
+	  icon: 'info',
+	  category: 'layout',
+
+		edit({attributes, className}){
+    // 許可されるブロックを登録
+		const allowedBlocks = [ 'works/term', 'works/description' ];
+	    return (
+	      <div className={className}>
+					<InnerBlocks allowedBlocks={allowedBlocks} templateLock={false} />
+	      </div>
+	    )
+	  },
+
+		save({className}){
+	    return (
+				<dl className={className}>
+        	<InnerBlocks.Content />
+				</dl>
+	    )
+	  }
+	} );
+
+	registerBlockType( 'works/term', {
+
+	  title: 'works-term',
+	  icon: 'info',
+	  category: 'layout',
+  	parent: [ 'custom-gutenberg-block/dl' ],
+
+	  attributes: {
+	    content: {
+	      type: 'array',
+	      source: 'html',
+	      selector: 'dt',
+	    },
+	  },
+
+		edit({attributes, setAttributes, className}){
+	    return (
+	      <RichText className={className} tagName='div' value={attributes.content} onChange={(content)=>setAttributes({content})}/>
+	    )
+	  },
+
+		save({attributes}){
+	    return (
+				<RichText.Content tagName='dt' value={attributes.content} />
+	    )
+	  }
+	} );
+
+	registerBlockType( 'works/description', {
+
+	  title: 'works-descriotion',
+	  icon: 'info',
+	  category: 'layout',
+  	parent: [ 'custom-gutenberg-block/dl' ],
+
+	  attributes: {
+	    content: {
+	      type: 'array',
+	      source: 'html',
+	      selector: 'dd',
+	    },
+	  },
+
+		edit({attributes, setAttributes, className}){
+	    return (
+	      <RichText className={className} tagName='div' value={attributes.content} onChange={(content)=>setAttributes({content})}/>
+	    )
+	  },
+
+		save({attributes}){
+	    return (
+				<RichText.Content tagName='dd' value={attributes.content} />
+	    )
+	  }
+	} );

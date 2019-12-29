@@ -1,8 +1,8 @@
 <?php
 function breadcrumb(){
   if(!is_front_page()&&!is_admin()){
-    $str.= '<div class="breadcrumb"><ol class="breadcrumb_inner" class="cf"><li itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="home">';
-    $str.= '<a href="'. home_url() .'" itemprop="url"><span itemprop="title">TOP</span></a></li>';
+    $str.= '<div class="breadcrumb"><ol class="breadcrumb_inner"><li class="home">';
+    $str.= '<a href="'. home_url() .'"><span>TOP</span></a></li>';
 		if(is_home()){
 			$str.='<li>ブログ</li>';
 		}elseif(is_date()){//年別アーカイブページ
@@ -29,7 +29,7 @@ function breadcrumb(){
 			$term_info = get_term($term_id);
 			$taxonomy = $term_info->taxonomy;
 			$post_type = get_taxonomy($taxonomy)->object_type[0];
-			$str.='<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'. home_url(). '/'. $post_type . '/" itemprop="url"><span itemprop="title">'. get_post_type_object($post_type)->label . '</span></a></li>';
+			$str.='<li><a href="'. home_url(). '/'. $post_type . '/"><span>'. get_post_type_object($post_type)->label . '</span></a></li>';
 			$str.='<li>'. single_term_title('', $display = false) .'</li>';
 		}elseif(is_single()){//個別ページ
 			$post_type = get_post_type( $post );
@@ -38,7 +38,7 @@ function breadcrumb(){
 			}else{
 				$post_type_url = $post_type;
 			}
-      $str.='<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="/'. $post_type_url . '/" itemprop="url"><span itemprop="title">'. get_post_type_object($post_type)->labels->singular_name . '</span></a></li>';
+      $str.='<li><a href="/'. $post_type_url . '/"><span>'. get_post_type_object($post_type)->labels->singular_name . '</span></a></li>';
       $str.='<li>'. get_the_title() .'</li>';
     }elseif(is_page()){//固定ページ
 			$page = get_post( get_the_ID() );

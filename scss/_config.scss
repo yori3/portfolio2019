@@ -22,3 +22,7 @@ $pixelFont: 'PixelMplus10', sans-serif;
 @function p2v($px){
   @return ($px / 750 * 100vw);
 }
+
+@function fs($size){
+  @return ($size / 16 * 1rem);
+}

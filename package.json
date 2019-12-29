@@ -35,6 +35,7 @@
     "webpack": "^4.29.6"
   },
   "dependencies": {
-    "gulp": "^4.0.0"
+    "gulp": "^4.0.0",
+    "merge-stream": "^2.0.0"
   }
 }

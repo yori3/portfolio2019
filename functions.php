@@ -111,84 +111,10 @@ endif;
 add_action( 'after_setup_theme', 'lab_setup' );
 
 function add_my_assets_to_block_editor() {
-    wp_enqueue_style( 'block-style', get_stylesheet_directory_uri() . '/css/editor/block_style.css' );
+    wp_enqueue_style( 'block-style', get_stylesheet_directory_uri() . '/css/block_style.css' );
     wp_enqueue_script( 'block-custom', get_stylesheet_directory_uri() . '/js/editor/block_custom.js',array(), "", true);
 }
 add_action( 'enqueue_block_editor_assets', 'add_my_assets_to_block_editor' );
 
 
-// ビジュアルエディタ用CSS
-add_editor_style('editor-style.css');
-
-function custom_editor_settings( $initArray ) {
-  $initArray['body_class'] = 'editor-area';
-  return $initArray;
-}
-
-add_filter( 'tiny_mce_before_init', 'custom_editor_settings' );
-
-
-
-function syntaxCode($num) {//引数付き
-	// extract(shortcode_atts(array(
-	// 	'syntax' => 'markup',
-	// 	'num' => 1,
-	// ), $atts));
-	if(empty($num)){
-		$numInt = 0;//引数省略すると1番目を表示
-	}else{
-		$numInt = intval($num[0] - 1);//数字化
-	}
-	$i = 0;//初期値
-	$loop = $numInt;//最大値
-	$codeArea = SCF::get('codeArea');
-	foreach ($codeArea as $field_value) {
-		if($i > $num){//最大値＝表示したいカスタムフィールドの番号になったらループ終了
-			break;
-		}else{
-			$txt = $field_value['codebox'];
-			$code = '<pre><code class=”language-'.$field_value['syntaxType'].'”>';
-			$code .= $txt;
-			$code .= '</code></pre>';
-			$i++;
-		}
-		// $txt = $field_value['codebox'];
-		// $code = '<pre><code class=”language-'.$syntaxType[0].'”>';
-		// $code .= $txt;
-		// $code .= '</code></pre>';
-		// $i++;
-	}
-	return $code;
-}
-add_shortcode('syntaxArea', 'syntaxCode');
-
 get_template_part('parts/fn-breadcrumb');
-
-
-// add_action( 'admin_print_footer_scripts', 'limit_category_select' );
-function limit_category_select() {
-	?>
-	<!-- <script type="text/javascript">
-		jQuery(function($) {
-			// 投稿画面のカテゴリー選択を制限
-			var cat_checklist = $('.categorychecklist input[type=checkbox]');
-			cat_checklist.click( function() {
-				$(this).parents('.categorychecklist').find('input[type=checkbox]').attr('checked', false);
-				$(this).attr('checked', true);
-			});
-
-			// クイック編集のカテゴリー選択を制限
-			var quickedit_cat_checklist = $('.cat-checklist input[type=checkbox]');
-			quickedit_cat_checklist.click( function() {
-				$(this).parents('.cat-checklist').find('input[type=checkbox]').attr('checked', false);
-				$(this).attr('checked', true);
-			});
-
-			$('.categorychecklist>li:first-child, .cat-checklist>li:first-child').before('<p style="padding-top:5px;">カテゴリーは1つしか選択できません</p>');
-		});
-	</script> -->
-	<?php
-}
-
-
-?>

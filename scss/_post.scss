@@ -21,7 +21,7 @@
 
 	&_ttl{
 	  margin-bottom: 10px;
-	  font-size: 1.2rem;
+	  font-size: fs(18);
 	  line-height: 1.2;
 	}
 
@@ -29,7 +29,7 @@
 	  display: block;
 	  margin-bottom: 10px;
 	  width: 100%;
-	  font-size: 0.8rem;
+	  font-size: fs(13);
 	  text-align: right;
 	}
 
@@ -85,53 +85,45 @@
 }
 
 .pagination{
+	display: flex;
+	justify-content: center;
   margin-top: 50px;
-  text-align: center;
-  a.page-numbers{
-    display: inline-block;
+	line-height: 1;
+  .page-numbers{
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		position: relative;
-    margin:0 2px;
-    padding:12px 15px;
+		width: p2v(80);
+		height: p2v(80);
+		margin:0 5px;
     border: solid 1px $mainColor;
 		border-radius: 2px;
-    background: #fff;
-    text-decoration: none;
+		background-color: #fff;
+		font-size: fs(20);
+		text-decoration: none;
 		&::after{
-			display: block;
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 100%;
 			color: $darkColor;
-			font-size: 1rem;
 			font-weight: bold;
 			font-family: "ionicons";
 			text-align: center;
-			line-height: 38px;
 		}
 		&.prev{
-			color: #fff;
+			color: transparent;
 			&::after{
 				content: "\f124";
 			}
 		}
 		&.next{
-			color: #fff;
+			color: transparent;
 			&::after{
 				content: "\f125";
 			}
 		}
-  }
-  .current{
-    display: inline-block;
-    margin:0 2px;
-    padding:12px 15px;
-    border: solid 1px $mainColor;
-		border-radius: 2px;
-    background: $mainColor;
-    color: #fff;
-    text-decoration: none;
+		&.current{
+			background: $mainColor;
+			color: #fff;
+		}
   }
 }
 .noPost{
@@ -175,7 +167,10 @@
 	  &_doc{
 	    width: 100%;
 			padding: 10px 5% 15px;
-	  }
+		}
+		&_ttl{
+			font-size: fs(20);
+		}
 	}
 
   .sub_contents{
@@ -210,23 +205,21 @@
 
   .pagination{
     margin-top: 50px;
-    a.page-numbers{
-      padding:5px 8px;
+    .page-numbers{
+			width: 40px;
+			height: 40px;
       transition: .3s;
-			&::after{
-				line-height: 28px;
-			}
       &:hover{
         background-color: $mainColor;
         border-color: $mainColor;
         color: #fff;
-				&:after{
-					color: #fff;
-				}
       }
 			&.next,&.prev{
 				&:hover{
-					color: $mainColor;
+					color: transparent;
+					&::after{
+						color: #fff;
+					}
 				}
 			}
     }
@@ -251,7 +244,7 @@
 		flex-direction: column;
 		justify-content: center;
 		position: relative;
-		height: 250px;
+		min-height: p2v(500);
 		overflow: hidden;
 		&::after{
 			display: block;
@@ -265,7 +258,7 @@
 		}
 		&_inner{
 			position: relative;
-			padding: 0 3.6%;
+			padding: p2v(30);
 			color: #fff;
 			z-index: 10;
 		}
@@ -283,56 +276,27 @@
 	}
 	&_ttl{
 		width: 100%;
-		font-size: 2rem;
+		font-size: fs(32);
 	  text-decoration: none;
 		line-height: 1.4;
 	}
 	&_date{
 		width: 100%;
 	  margin-bottom: 15px;
-		font-size: 1rem;
+		font-size: fs(14);
 	}
 	&_content{
 	  margin-top: 15px;
-		padding: 0 3.125%;
+		padding: 0 p2v(30);
 
-		[class^="language-"]{
-			display: block;
-			margin: 1em 0;
-			padding: 1em;
-			background-color: #333;
-			color: #fff;
-			font-size: 0.9rem;
-			white-space: nowrap;
-			overflow: scroll;
-		}
+		@import "_postContent";
 
-		.code{
-			display: block;
-			margin: 1em 0;
-			padding: 1em;
-			background-color: #333;
-			color: #fff;
-			font-size: 0.9rem;
-			white-space: nowrap;
-			overflow: scroll;
-			&::-webkit-scrollbar{
-				height:10px;
-				background:$gray;
-			}
-			&::-webkit-scrollbar-corner{
-				background:$gray;
-			}
-			&::-webkit-scrollbar-thumb{
-				background:#666;
-			}
-		}
 	  .sharedaddy{
 	    margin-top: 50px;
 	    .sd-title{
 				border-left: none;
 				padding-left: 0;
-	      font-size: 1.2rem;
+	      font-size: fs(18);
 				font-family: $enFont;
 				&::before{
 					display: none;
@@ -365,11 +329,11 @@
 	  }
 
 		&_header{
-			height: 450px;
+			min-height: 450px;
 		}
 
 	  &_ttl{
-	    font-size: 3rem;
+	    font-size: fs(40);
 	  }
 
 	  &_content{

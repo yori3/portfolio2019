@@ -124,7 +124,7 @@
   		transform: rotateY(-120deg);
   		transform-origin: 100% 0 0;
   		transition: transform .8s;
-  		@for $i from 1 through 5 {
+  		@for $i from 1 through 10 {
   		  &:nth-child(#{$i}) {
   		    transition-delay: #{0.1 * $i}s;
   		  }
@@ -259,12 +259,3 @@
 		}
 	}
 }/* @media */
-
-
-.footer{
-  padding: 30px;
-  background-color: $mainColor;
-  color: #fff;
-  font-size: 0.8rem;
-  text-align: center;
-}

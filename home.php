@@ -52,8 +52,8 @@
              'total' => $wp_query->max_num_pages,
              'mid_size' => 1,
              'current' => ($paged ? $paged : 1),
-             'prev_text' => '<',
-             'next_text' => '>',
+             'prev_text' => '',
+             'next_text' => '',
          )); ?>
      </div>
     </div>

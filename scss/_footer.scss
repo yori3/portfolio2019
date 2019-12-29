@@ -2,8 +2,11 @@
   padding: 30px;
   background-color: $mainColor;
   color: #fff;
-  font-size: 0.8rem;
-  text-align: center;
+	text-align: center;
+	.copyright{
+		font-size: 0.8em;
+		line-height: 1.2;
+	}
 }
 
 .btn_totop{
@@ -78,8 +81,6 @@
 }
 
 @media screen and (min-width:780px){
-  .footer{
-  }
 
 	.cookie_box{
 		padding: 30px 0;

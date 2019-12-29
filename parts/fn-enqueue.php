@@ -17,6 +17,10 @@ function mypage_scripts(){
 	wp_enqueue_style('font-awesome','//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
 	wp_enqueue_style('ionicons','//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
 
+	if(is_single()){
+		wp_css('prism');
+	}
+
 	wp_css('style');
 
 	wp_deregister_script('jquery');
