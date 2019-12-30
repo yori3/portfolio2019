@@ -2,18 +2,49 @@
 	font-size: 1rem;
 }
 h2{
+	position: relative;
 	margin-top: 2em;
 	margin-bottom: 1em;
-	padding-left: 0.2em;
-	border-left: 6px solid $mainColor;
+	padding: .8em 0 .5em;
 	font-size: 2em;
 	line-height: 1.3;
+	&::before,&::after{
+		display: block;
+		position: absolute;
+		left: 0;
+		width: 100%;
+		content: "";
+	}
+	&::before{
+		top: 0;
+		height: 4px;
+		border-radius: 4px;
+		background-color: $mainColor;
+	}
+	&::after{
+		bottom: 0;
+		height: 2px;
+		background-color: #ccc;
+	}
 }
 h3{
+	position: relative;
 	margin-top: 2em;
 	margin-bottom: 1em;
+	padding-left: 0.5em;
 	font-size: 1.6em;
 	line-height: 1.3;
+	&::before{
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 6px;
+		height: 100%;
+		border-radius: 5px;
+		background-color: $mainColor;
+		content: "";
+	}
 }
 p,ul,ol{
 	margin: 1.5em 0;
