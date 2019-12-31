@@ -15,14 +15,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri:400,600|Press+Start+2P|Orbitron:400,700|Poppins:400,600" rel="stylesheet">
 <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
+<?php
+if(is_front_page()){
+  $title = 'WeST -yori3&#039;s portfolio-';
+  $description = 'Webクリエイター　西村依泰（yori3）のポートフォリオサイトです。ブログなどを通して、新しく知ったことや、実践したことを発信し、また、様々な情報を収集していき、Webクリエイターとしての発展を目指しています。';
+}elseif(is_page() || is_single()){
+  $title = get_the_title();
+  $description = get_the_excerpt();
+}else{
+  $title = 'WeST -yori3&#039;s portfolio-';
+  $description = 'Webクリエイター　西村依泰（yori3）のポートフォリオサイトです。ブログなどを通して、新しく知ったことや、実践したことを発信し、また、様々な情報を収集していき、Webクリエイターとしての発展を目指しています。';
+}
 
-<meta name="description" content="Webクリエイター　西村依泰（yori3）のポートフォリオサイトです。ブログなどを通して、新しく知ったことや、実践したことを発信し、また、様々な情報を収集していき、Webクリエイターとしての発展を目指しています。">
+?>
+<meta name="description" content="<?php echo $description; ?>">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="<?php echo home_url();?>">
 <meta property="og:site_name" content="<?php bloginfo( 'name' ); ?>">
-<meta property="og:title" content="<?php bloginfo( 'name' ); ?>">
-<meta property="og:description" content="Webクリエイター　西村依泰（yori3）のポートフォリオサイトです。ブログなどを通して、新しく知ったことや、実践したことを発信し、また、様々な情報を収集していき、Webクリエイターとしての発展を目指しています。">
+<meta property="og:title" content="<?php echo $title; ?>">
+<meta property="og:description" content="<?php echo $description; ?>">
 <meta property="og:image" content="<?php echo get_template_directory_uri()?>/images/ogp.jpg">
 
 <?php wp_head(); ?>

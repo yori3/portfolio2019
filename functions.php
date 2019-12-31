@@ -55,7 +55,11 @@ function new_excerpt_more($more) {
 add_filter('excerpt_more', 'new_excerpt_more');
 
 function new_excerpt_mblength($length) {
-   return 30;
+	if(is_single()){
+		return 160;
+	}else{
+		return 30;
+	}
 }
 add_filter('excerpt_mblength', 'new_excerpt_mblength');
 
