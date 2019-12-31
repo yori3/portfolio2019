@@ -33,12 +33,17 @@ function breadcrumb(){
 			$str.='<li>'. single_term_title('', $display = false) .'</li>';
 		}elseif(is_single()){//個別ページ
 			$post_type = get_post_type( $post );
+			$post_cat = get_the_category( $post );
 			if($post_type == 'post'){
 				$post_type_url = 'blog';
+
 			}else{
 				$post_type_url = $post_type;
 			}
-      $str.='<li><a href="/'. $post_type_url . '/"><span>'. get_post_type_object($post_type)->labels->singular_name . '</span></a></li>';
+			$str.='<li><a href="'. home_url(). '/'. $post_type_url . '/"><span>'. get_post_type_object($post_type)->labels->singular_name . '</span></a></li>';
+			if($post_cat[0] != 0){
+				$str.='<li><a href="'. home_url(). '/'. $post_cat[0]->slug . '/"><span>'. $post_cat[0]->name. '</span></a></li>';
+			}
       $str.='<li>'. get_the_title() .'</li>';
     }elseif(is_page()){//固定ページ
 			$page = get_post( get_the_ID() );
