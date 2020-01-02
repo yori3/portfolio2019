@@ -257,10 +257,6 @@ body {
   line-height: 1.75;
 }
 
-.contents {
-  font-size: 1rem;
-}
-
 .contents h2 {
   position: relative;
   margin-top: 2em;
@@ -1055,10 +1051,6 @@ body {
   line-height: 1;
 }
 
-.works__content {
-  font-size: 1rem;
-}
-
 .works__content h2 {
   position: relative;
   margin-top: 2em;
@@ -1166,9 +1158,9 @@ body {
 
 .works__content .wp-block-works-term {
   position: relative;
-  width: 7em;
-  padding: calc(1em - 4px) 1em 1em;
+  flex-basis: 7em;
   font-weight: bold;
+  padding: calc(1em - 4px) 1em 1em;
 }
 
 .works__content .wp-block-works-term::after {
@@ -1184,8 +1176,8 @@ body {
 }
 
 .works__content .wp-block-works-description {
+  flex-basis: calc(100% - 7em);
   position: relative;
-  width: calc(100% - 7em);
   padding: calc(1em - 4px) 1em 1em;
 }
 
@@ -1202,6 +1194,12 @@ body {
 }
 
 @media screen and (min-width: 780px) {
+  .works__content .wp-block-works-term, .works__content .wp-block-works-description {
+    padding: calc(1.3em - 4px) 1em 1.3em;
+  }
+}
+
+@media screen and (min-width: 780px) {
   .works__list {
     display: flex;
     flex-wrap: wrap;
@@ -1215,9 +1213,6 @@ body {
   }
   .works__thumb {
     margin-bottom: 30px;
-  }
-  .works__content .wp-block-works-term, .works__content .wp-block-works-description {
-    padding: calc(1.3em - 4px) 1em 1.3em;
   }
 }
 
@@ -1510,9 +1505,6 @@ body {
 .post_content {
   margin-top: 15px;
   padding: 0 4vw;
-}
-
-.post_content {
   font-size: 1rem;
 }
 

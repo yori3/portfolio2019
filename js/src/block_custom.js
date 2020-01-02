@@ -91,11 +91,11 @@ registerBlockType( 'works/definition', {
 	  title: 'works-term',
 	  icon: 'info',
 	  category: 'layout',
-  	parent: [ 'custom-gutenberg-block/dl' ],
+  	parent: [ 'works/definition' ],
 
 	  attributes: {
 	    content: {
-	      type: 'array',
+	      // type: 'array',
 	      source: 'html',
 	      selector: 'dt',
 	    },
@@ -116,14 +116,14 @@ registerBlockType( 'works/definition', {
 
 	registerBlockType( 'works/description', {
 
-	  title: 'works-descriotion',
+	  title: 'works-description',
 	  icon: 'info',
 	  category: 'layout',
-  	parent: [ 'custom-gutenberg-block/dl' ],
+  	parent: [ 'works/definition' ],
 
 	  attributes: {
 	    content: {
-	      type: 'array',
+	      // type: 'array',
 	      source: 'html',
 	      selector: 'dd',
 	    },

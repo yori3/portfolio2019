@@ -6,11 +6,50 @@
 .edit-post-visual-editor{
   font-family: 'Hind Siliguri', "Noto Sans Japanese", sans-serif !important;
 
+  @import "_postContent";
+  @import "_worksContent";
+
   .editor-post-title__block .editor-post-title__input{
     width: 100%;
     font-size: 2rem;
     text-decoration: none;
     font-family: inherit;
     line-height: 1.4;
+  }
+
+  .editor-block-list__layout{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .wp-block{
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .block-editor-block-list__block{
+    margin: 0;
+  }
+  .block-editor-block-list__block .block-editor-block-list__block-edit{
+    margin: 0;
+  }
+  .block-editor-block-list__layout .block-editor-block-list__block .block-editor-block-drop-zone{
+    margin: 0;
+  }
+
+  [data-type="works/term"]{
+    @include termLayout();
+    padding: 0;
+  }
+  .wp-block-works-term{
+    flex-basis: 100%;
+  }
+
+  [data-type="works/description"]{
+    @include descriptionLayout();
+    padding: 0;
+  }
+  .wp-block-works-description{
+    flex-basis: 100%;
   }
 }

@@ -106,10 +106,199 @@ body {
   font-family: 'Hind Siliguri', "Noto Sans Japanese", sans-serif !important;
 }
 
+.edit-post-visual-editor h2 {
+  position: relative;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  padding: .8em 0 .5em;
+  font-size: 2em;
+  line-height: 1.3;
+}
+
+.edit-post-visual-editor h2::before, .edit-post-visual-editor h2::after {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  content: "";
+}
+
+.edit-post-visual-editor h2::before {
+  top: 0;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #61a6c6;
+}
+
+.edit-post-visual-editor h2::after {
+  bottom: 0;
+  height: 2px;
+  background-color: #ccc;
+}
+
+.edit-post-visual-editor h3 {
+  position: relative;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  padding-left: 0.5em;
+  font-size: 1.6em;
+  line-height: 1.3;
+}
+
+.edit-post-visual-editor h3::before {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 6px;
+  height: 100%;
+  border-radius: 5px;
+  background-color: #61a6c6;
+  content: "";
+}
+
+.edit-post-visual-editor p, .edit-post-visual-editor ul, .edit-post-visual-editor ol {
+  margin: 1.5em 0;
+  margin-bottom: 1.75em;
+  font-size: 1em;
+  line-height: 1.75;
+}
+
+.edit-post-visual-editor a {
+  color: #3F87AA;
+  text-decoration: underline;
+}
+
+.edit-post-visual-editor a:hover {
+  text-decoration: none;
+}
+
+.edit-post-visual-editor code:not([class*="language-"]) {
+  padding: 0.2em;
+  background-color: #333;
+  color: #fff;
+  font-size: 0.9em;
+  border-radius: 5px;
+}
+
+.edit-post-visual-editor .code {
+  display: block;
+  margin: 1em 0;
+  padding: 1em;
+  background-color: #333;
+  color: #fff;
+  font-size: 0.9em;
+  overflow: scroll;
+}
+
+.edit-post-visual-editor .code::-webkit-scrollbar {
+  height: 10px;
+  background: #ccc;
+}
+
+.edit-post-visual-editor .code::-webkit-scrollbar-corner {
+  background: #ccc;
+}
+
+.edit-post-visual-editor .code::-webkit-scrollbar-thumb {
+  background: #666;
+}
+
+.edit-post-visual-editor .wp-block-works-definition {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.edit-post-visual-editor .wp-block-works-term {
+  position: relative;
+  flex-basis: 7em;
+  font-weight: bold;
+  padding: calc(1em - 4px) 1em 1em;
+}
+
+.edit-post-visual-editor .wp-block-works-term::after {
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 50px 0 0 50px;
+  background-color: #61a6c6;
+  content: "";
+}
+
+.edit-post-visual-editor .wp-block-works-description {
+  flex-basis: calc(100% - 7em);
+  position: relative;
+  padding: calc(1em - 4px) 1em 1em;
+}
+
+.edit-post-visual-editor .wp-block-works-description::after {
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 0 50px 50px 0;
+  background-color: #daecf2;
+  content: "";
+}
+
+@media screen and (min-width: 780px) {
+  .edit-post-visual-editor .wp-block-works-term, .edit-post-visual-editor .wp-block-works-description {
+    padding: calc(1.3em - 4px) 1em 1.3em;
+  }
+}
+
 .edit-post-visual-editor .editor-post-title__block .editor-post-title__input {
   width: 100%;
   font-size: 2rem;
   text-decoration: none;
   font-family: inherit;
   line-height: 1.4;
+}
+
+.edit-post-visual-editor .editor-block-list__layout {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.edit-post-visual-editor .wp-block {
+  width: 100%;
+  max-width: 100%;
+}
+
+.edit-post-visual-editor .block-editor-block-list__block {
+  margin: 0;
+}
+
+.edit-post-visual-editor .block-editor-block-list__block .block-editor-block-list__block-edit {
+  margin: 0;
+}
+
+.edit-post-visual-editor .block-editor-block-list__layout .block-editor-block-list__block .block-editor-block-drop-zone {
+  margin: 0;
+}
+
+.edit-post-visual-editor [data-type="works/term"] {
+  flex-basis: 7em;
+  font-weight: bold;
+  padding: 0;
+}
+
+.edit-post-visual-editor .wp-block-works-term {
+  flex-basis: 100%;
+}
+
+.edit-post-visual-editor [data-type="works/description"] {
+  flex-basis: calc(100% - 7em);
+  padding: 0;
+}
+
+.edit-post-visual-editor .wp-block-works-description {
+  flex-basis: 100%;
 }
