@@ -12,9 +12,9 @@
   <section class="section">
     <div class="inner">
 
-      <div class="about__lead">
-        <?php the_content(); ?>
-      </div>
+      <!-- <div class="about__lead">
+      </div> -->
+      <?php the_content(); ?>
 
 
       <div class="about__block about__block-profile">

@@ -1,7 +1,6 @@
 .section{
-	padding: 50px 0;
-	&:nth-of-type(even)
-	{
+	padding: p2v(100) 0;
+	&:nth-of-type(even){
 		background-color: $bgColor;
 	}
 }
@@ -98,7 +97,11 @@
 		&:last-child::after{
 			display: none;
 		}
-  }
+	}
+
+	&+.section{
+		padding-top: p2v(50);
+	}
 }
 
 .kv{
@@ -206,7 +209,10 @@
 		padding: 15px 0;
     li a:hover{
       text-decoration: none;
-    }
+		}
+		&+.section{
+			padding-top: 25px;
+		}
   }
 
   .kv{

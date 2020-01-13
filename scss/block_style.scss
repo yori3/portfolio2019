@@ -37,19 +37,21 @@
     margin: 0;
   }
 
-  [data-type="works/term"]{
+  [data-type="custom/term"]{
     @include termLayout();
     padding: 0;
   }
-  .wp-block-works-term{
+  .wp-block-custom-term{
     flex-basis: 100%;
+    @include termStyle();
   }
 
-  [data-type="works/description"]{
+  [data-type="custom/description"]{
     @include descriptionLayout();
     padding: 0;
   }
-  .wp-block-works-description{
+  .wp-block-custom-description{
     flex-basis: 100%;
+    @include descriptionStyle();
   }
 }

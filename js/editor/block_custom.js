@@ -69,9 +69,10 @@ registerBlockType('yori3/section', {
 	}
 });
 
-registerBlockType('works/definition', {
+//dl,dt,dd
+registerBlockType('custom/definition', {
 
-	title: 'works-definition',
+	title: 'dl',
 	icon: 'info',
 	category: 'layout',
 
@@ -80,7 +81,7 @@ registerBlockType('works/definition', {
 		    className = _ref3.className;
 
 		// 許可されるブロックを登録
-		var allowedBlocks = ['works/term', 'works/description'];
+		var allowedBlocks = ['custom/term', 'custom/description'];
 		return React.createElement(
 			'div',
 			{ className: className },
@@ -98,12 +99,12 @@ registerBlockType('works/definition', {
 	}
 });
 
-registerBlockType('works/term', {
+registerBlockType('custom/term', {
 
-	title: 'works-term',
+	title: 'dt',
 	icon: 'info',
 	category: 'layout',
-	parent: ['works/definition'],
+	parent: ['custom/definition'],
 
 	attributes: {
 		content: {
@@ -129,12 +130,12 @@ registerBlockType('works/term', {
 	}
 });
 
-registerBlockType('works/description', {
+registerBlockType('custom/description', {
 
-	title: 'works-description',
+	title: 'dd',
 	icon: 'info',
 	category: 'layout',
-	parent: ['works/definition'],
+	parent: ['custom/definition'],
 
 	attributes: {
 		content: {

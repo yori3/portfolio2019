@@ -61,83 +61,85 @@ registerBlockType( 'yori3/section', {
   }
 } );
 
-registerBlockType( 'works/definition', {
 
-	  title: 'works-definition',
-	  icon: 'info',
-	  category: 'layout',
+//dl,dt,dd
+registerBlockType( 'custom/definition', {
 
-		edit({attributes, className}){
-    // 許可されるブロックを登録
-		const allowedBlocks = [ 'works/term', 'works/description' ];
-	    return (
-	      <div className={className}>
-					<InnerBlocks allowedBlocks={allowedBlocks} templateLock={false} />
-	      </div>
-	    )
-	  },
+	title: 'dl',
+	icon: 'info',
+	category: 'layout',
 
-		save({className}){
-	    return (
-				<dl className={className}>
-        	<InnerBlocks.Content />
-				</dl>
-	    )
-	  }
-	} );
+	edit({attributes, className}){
+	// 許可されるブロックを登録
+	const allowedBlocks = [ 'custom/term', 'custom/description' ];
+		return (
+			<div className={className}>
+				<InnerBlocks allowedBlocks={allowedBlocks} templateLock={false} />
+			</div>
+		)
+	},
 
-	registerBlockType( 'works/term', {
+	save({className}){
+		return (
+			<dl className={className}>
+				<InnerBlocks.Content />
+			</dl>
+		)
+	}
+} );
 
-	  title: 'works-term',
-	  icon: 'info',
-	  category: 'layout',
-  	parent: [ 'works/definition' ],
+registerBlockType( 'custom/term', {
 
-	  attributes: {
-	    content: {
-	      // type: 'array',
-	      source: 'html',
-	      selector: 'dt',
-	    },
-	  },
+	title: 'dt',
+	icon: 'info',
+	category: 'layout',
+	parent: [ 'custom/definition' ],
 
-		edit({attributes, setAttributes, className}){
-	    return (
-	      <RichText className={className} tagName='div' value={attributes.content} onChange={(content)=>setAttributes({content})}/>
-	    )
-	  },
+	attributes: {
+		content: {
+			// type: 'array',
+			source: 'html',
+			selector: 'dt',
+		},
+	},
 
-		save({attributes}){
-	    return (
-				<RichText.Content tagName='dt' value={attributes.content} />
-	    )
-	  }
-	} );
+	edit({attributes, setAttributes, className}){
+		return (
+			<RichText className={className} tagName='div' value={attributes.content} onChange={(content)=>setAttributes({content})}/>
+		)
+	},
 
-	registerBlockType( 'works/description', {
+	save({attributes}){
+		return (
+			<RichText.Content tagName='dt' value={attributes.content} />
+		)
+	}
+} );
 
-	  title: 'works-description',
-	  icon: 'info',
-	  category: 'layout',
-  	parent: [ 'works/definition' ],
+registerBlockType( 'custom/description', {
 
-	  attributes: {
-	    content: {
-	      // type: 'array',
-	      source: 'html',
-	      selector: 'dd',
-	    },
-	  },
+	title: 'dd',
+	icon: 'info',
+	category: 'layout',
+	parent: [ 'custom/definition' ],
 
-		edit({attributes, setAttributes, className}){
-	    return (
-	      <RichText className={className} tagName='div' value={attributes.content} onChange={(content)=>setAttributes({content})}/>
-	    )
-	  },
+	attributes: {
+		content: {
+			// type: 'array',
+			source: 'html',
+			selector: 'dd',
+		},
+	},
 
-		save({attributes}){
-	    return (
-				<RichText.Content tagName='dd' value={attributes.content} />
-	    )
-	  }
-	} );
+	edit({attributes, setAttributes, className}){
+		return (
+			<RichText className={className} tagName='div' value={attributes.content} onChange={(content)=>setAttributes({content})}/>
+		)
+	},
+
+	save({attributes}){
+		return (
+			<RichText.Content tagName='dd' value={attributes.content} />
+		)
+	}
+} );

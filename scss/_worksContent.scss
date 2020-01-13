@@ -2,56 +2,79 @@
   flex-basis: 7em;
   font-weight: bold;
 }
+@mixin termStyle(){
+  position: relative;
+  padding: calc(1em - 4px) 1em 1em;
+  &::after{
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 50px 0 0 50px;
+    background-color: $mainColor;
+    content: "";
+  }
+}
+
 @mixin descriptionLayout(){
   flex-basis: calc(100% - 7em);
 }
+@mixin descriptionStyle(){
+  position: relative;
+  padding: calc(1em - 4px) 1em 1em;
+  &::after{
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 0 50px 50px 0;
+    background-color: $blueGray;
+    content: "";
+  }
+}
 
-.wp-block-works{
+.works{
   &-definition{
     display: flex;
     flex-wrap: wrap;
     font-size: 1rem;
     line-height: 1.75;
-  }
-  &-term{
-    position: relative;
-    @include termLayout();
-    padding: calc(1em - 4px) 1em 1em;
-    &::after{
-      display: block;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 4px;
-      border-radius: 50px 0 0 50px;
-      background-color: $mainColor;
-      content: "";
+    dt{
+      @include termLayout();
+      @include termStyle();
     }
-  }
-  &-description{
-    @include descriptionLayout();
-    position: relative;
-    padding: calc(1em - 4px) 1em 1em;
-    &::after{
-      display: block;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 4px;
-      border-radius: 0 50px 50px 0;
-      background-color: $blueGray;
-      content: "";
+    dd{
+      @include descriptionLayout();
+      @include descriptionStyle();
     }
   }
 }
 
+p,ul,ol{
+	margin: 1.5em 0;
+	margin-bottom: 1.75em;
+	font-size: 1em;
+	line-height: 1.75;
+}
+a{
+	color: $linkColor;
+	text-decoration: underline;
+	&:hover{
+		text-decoration: none;
+	}
+}
+
 @media screen and (min-width:780px){
-  .wp-block-works{
-    &-term,
-    &-description{
-      padding: calc(1.3em - 4px) 1em 1.3em;
+  .works{
+    &definition{
+      dt,
+      dd{
+        padding: calc(1.3em - 4px) 1em 1.3em;
+      }
     }
   }
 }
