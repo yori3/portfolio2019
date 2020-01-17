@@ -215,9 +215,9 @@
 		}
   }
 
-  .kv{
-		.wave{
-			top: 0;
+  .kv:not(.kv_home){
+		&::after{
+			background-size: auto 200%;
 		}
 		&.page_kv{
 			height: 200px;

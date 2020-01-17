@@ -26,3 +26,60 @@ $pixelFont: 'PixelMplus10', sans-serif;
 @function fs($size){
   @return ($size / 16 * 1rem);
 }
+
+//自己紹介
+@mixin aboutTitle(){
+  position: relative;
+		margin-top: 0;
+		margin-bottom: 30px;
+		padding: 0;
+		font-size: fs(24);
+		&:first-letter{
+			color: $darkColor;
+			font-size: 1.5em;
+		}
+		&::before{
+			display: block;
+			position: absolute;
+			left: 0;
+			top: auto;
+			bottom: -2px;
+			width: 100%;
+			background-color: $darkColor;
+			content: "";
+		}
+		&::after{
+			display: none;
+		}
+}
+
+@mixin profileTerm(){
+	display: inline-block;
+	position: relative;
+	margin-bottom: 10px;
+	padding: .2em .5em;
+	background-color: $mainColor;
+	color: #fff;
+	font-size: fs(18);
+	font-weight: bold;
+	line-height: 1;
+	&::after{
+		display: block;
+		position: absolute;
+		right: -18px;
+		bottom: -18px;
+		border: 18px solid transparent;
+		border-top: 18px solid $mainColor;
+		transform: rotate(45deg);
+		content: "";
+	}
+}
+@mixin profileDescription(){
+	padding-left: 1em;
+	padding-bottom: 1.5em;
+	font-size: 1rem;
+	line-height: 1.3;
+	&:last-of-type{
+		padding-bottom: 0;
+	}
+}

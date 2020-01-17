@@ -10,14 +10,14 @@
   <?php breadcrumb(); ?>
 
   <section class="section">
-    <div class="inner">
+    <div class="inner contents">
 
       <!-- <div class="about__lead">
       </div> -->
       <?php the_content(); ?>
 
 
-      <div class="about__block about__block-profile">
+      <!-- <div class="about__block about__block-profile">
         <h2 class="about__ttl">Profile</h2>
         <div class="profile__img"><img src="<?php echo get_template_directory_uri(); ?>/images/img_mine.jpg" alt=""></div>
         <dl class="profile__content profileList">
@@ -36,9 +36,9 @@
           <dt>Community</dt>
           <dd>Word Camp Kansai 2016 実行委員<br>Word Camp Kyoto 2017 実行委員<br>Word Camp Osaka 2018 実行委員</dd>
         </dl>
-      </div>
+      </div> -->
 
-      <div class="about__block about__block-skill">
+      <!-- <div class="about__block about__block-skill">
         <h2 class="about__ttl">Skill</h2>
         <div class="skill__content skill__content-tools">
           <h3>Tools</h3>
@@ -65,7 +65,7 @@
             <li>WordPress</li>
           </ul>
         </div>
-      </div>
+      </div> -->
     </div>
 
   </section>

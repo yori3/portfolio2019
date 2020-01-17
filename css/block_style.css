@@ -102,6 +102,11 @@ body {
   }
 }
 
+@font-face {
+  font-family: 'ionicons';
+  src: url("//code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.woff");
+}
+
 .edit-post-visual-editor {
   font-family: 'Hind Siliguri', "Noto Sans Japanese", sans-serif !important;
 }
@@ -271,17 +276,18 @@ body {
   }
 }
 
+.edit-post-visual-editor .editor-post-title__block {
+  background-image: linear-gradient(to bottom, rgba(97, 166, 198, 0) 0%, rgba(97, 166, 198, 0) 45%, rgba(97, 166, 198, 0.1) 100%);
+}
+
 .edit-post-visual-editor .editor-post-title__block .editor-post-title__input {
   width: 100%;
   font-size: 2rem;
   text-decoration: none;
+  color: #61a6c6;
   font-family: inherit;
   line-height: 1.4;
-}
-
-.edit-post-visual-editor .editor-block-list__layout {
-  display: flex;
-  flex-wrap: wrap;
+  text-align: center;
 }
 
 .edit-post-visual-editor .wp-block {
@@ -301,19 +307,24 @@ body {
   margin: 0;
 }
 
-.edit-post-visual-editor [data-type="custom/term"] {
+.edit-post-visual-editor .works-definition .editor-block-list__layout {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.edit-post-visual-editor .works-definition [data-type="custom/term"] {
   flex-basis: 7em;
   font-weight: bold;
   padding: 0;
 }
 
-.edit-post-visual-editor .wp-block-custom-term {
+.edit-post-visual-editor .works-definition .wp-block-custom-term {
   flex-basis: 100%;
   position: relative;
   padding: calc(1em - 4px) 1em 1em;
 }
 
-.edit-post-visual-editor .wp-block-custom-term::after {
+.edit-post-visual-editor .works-definition .wp-block-custom-term::after {
   display: block;
   position: absolute;
   left: 0;
@@ -325,18 +336,18 @@ body {
   content: "";
 }
 
-.edit-post-visual-editor [data-type="custom/description"] {
+.edit-post-visual-editor .works-definition [data-type="custom/description"] {
   flex-basis: calc(100% - 7em);
   padding: 0;
 }
 
-.edit-post-visual-editor .wp-block-custom-description {
+.edit-post-visual-editor .works-definition .wp-block-custom-description {
   flex-basis: 100%;
   position: relative;
   padding: calc(1em - 4px) 1em 1em;
 }
 
-.edit-post-visual-editor .wp-block-custom-description::after {
+.edit-post-visual-editor .works-definition .wp-block-custom-description::after {
   display: block;
   position: absolute;
   left: 0;
@@ -346,4 +357,170 @@ body {
   border-radius: 0 50px 50px 0;
   background-color: #daecf2;
   content: "";
+}
+
+.edit-post-visual-editor .about__lead {
+  text-align: center;
+}
+
+.edit-post-visual-editor .about__block h2 {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 30px;
+  padding: 0;
+  font-size: 1.5rem;
+  width: 100%;
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+.edit-post-visual-editor .about__block h2:first-letter {
+  color: #61a6c6;
+  font-size: 1.5em;
+}
+
+.edit-post-visual-editor .about__block h2::before {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: auto;
+  bottom: -2px;
+  width: 100%;
+  background-color: #61a6c6;
+  content: "";
+}
+
+.edit-post-visual-editor .about__block h2::after {
+  display: none;
+}
+
+.edit-post-visual-editor .about__block h3 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: 0;
+  margin-bottom: 1em;
+  padding: .2em;
+  background-color: #fff;
+  font-size: 1.5rem;
+  transform: translate(1.5em, -120%);
+}
+
+.edit-post-visual-editor .about__block h3::before {
+  display: inline-block;
+  position: relative;
+  top: 2px;
+  width: auto;
+  height: auto;
+  margin-right: .3em;
+  background-color: transparent;
+  color: #61a6c6;
+  font-family: "ionicons";
+}
+
+.edit-post-visual-editor .about__block h3::first-letter {
+  color: #61a6c6;
+}
+
+.edit-post-visual-editor .about__block .skill__content {
+  position: relative;
+  border: 2px solid #61a6c6;
+  border-radius: 5px;
+  margin: 0 3%;
+}
+
+.edit-post-visual-editor .about__block .skill__content .block-editor-block-list__block {
+  padding: 0;
+}
+
+.edit-post-visual-editor .about__block .skill__content ul {
+  margin: 0;
+  padding: 40px 30px;
+}
+
+.edit-post-visual-editor .about__block .skill__content ul li {
+  padding-left: 1em;
+  color: #61a6c6;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  letter-spacing: 0.05em;
+}
+
+.edit-post-visual-editor .about__block .skill__content ul li + li {
+  margin-top: 1em;
+}
+
+.edit-post-visual-editor .about__block .skill__content-tools h3::before {
+  content: "\f2ad";
+}
+
+.edit-post-visual-editor .about__block .skill__content-language h3::before {
+  content: "\f271";
+}
+
+.edit-post-visual-editor .about__block-row > .wp-block-group__inner-container > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.edit-post-visual-editor .about__block-row > .wp-block-group__inner-container > .block-editor-inner-blocks > .block-editor-block-list__layout > .block-editor-block-list__block {
+  flex-basis: 50%;
+  padding: 0;
+}
+
+.edit-post-visual-editor .about__block-profile .about__block-row > .wp-block-group__inner-container > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  justify-content: space-between;
+}
+
+.edit-post-visual-editor .about__block-profile .about__block-row > .wp-block-group__inner-container > .block-editor-inner-blocks > .block-editor-block-list__layout .block-editor-block-list__block:nth-child(1) {
+  flex-basis: 40%;
+  flex-shrink: 0;
+}
+
+.edit-post-visual-editor .about__block-profile .about__block-row > .wp-block-group__inner-container > .block-editor-inner-blocks > .block-editor-block-list__layout .block-editor-block-list__block:nth-child(2) {
+  flex: 1 0 60%;
+  padding-left: 5%;
+}
+
+.edit-post-visual-editor .about__block [data-type="custom/term"] {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 10px;
+  padding: .2em .5em;
+  background-color: #61a6c6;
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: bold;
+  line-height: 1;
+  width: auto;
+}
+
+.edit-post-visual-editor .about__block [data-type="custom/term"]::after {
+  display: block;
+  position: absolute;
+  right: -18px;
+  bottom: -18px;
+  border: 18px solid transparent;
+  border-top: 18px solid #61a6c6;
+  transform: rotate(45deg);
+  content: "";
+}
+
+.edit-post-visual-editor .about__block [data-type="custom/term"] [data-block] {
+  margin: 0;
+}
+
+.edit-post-visual-editor .about__block [data-type="custom/description"] {
+  padding-left: 1em;
+  padding-bottom: 1.5em;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.edit-post-visual-editor .about__block [data-type="custom/description"]:last-of-type {
+  padding-bottom: 0;
+}
+
+.edit-post-visual-editor .about__block [data-type="custom/description"] [data-block] {
+  margin: 0;
 }

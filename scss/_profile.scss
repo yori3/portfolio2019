@@ -1,29 +1,13 @@
 //自己紹介
+
+
 .about{
 	&__block{
 		position: relative;
 		margin-top: 60px;
 	}
-	&__ttl{
-		position: relative;
-		margin-bottom: 30px;
-		font-size: fs(24);
-		&:first-letter{
-			color: $darkColor;
-			font-size: 1.5em;
-		}
-		&::before,&::after{
-			display: block;
-			position: absolute;
-			left: 0;
-			content: "";
-		}
-		&::before{
-			bottom: -2px;
-			width: 100%;
-			height: 2px;
-			background-color: $darkColor;
-		}
+	.about__ttl{
+		@include aboutTitle();
 	}
 	&__lead{
 		margin-bottom: 30px;
@@ -39,34 +23,10 @@
 
 .profileList{
 	dt{
-		display: inline-block;
-		position: relative;
-		margin-bottom: 10px;
-		padding: .2em .5em;
-		background-color: $mainColor;
-		color: #fff;
-		font-size: fs(18);
-		font-weight: bold;
-		line-height: 1;
-		&::after{
-			display: block;
-			position: absolute;
-			right: -18px;
-			bottom: -18px;
-			border: 18px solid transparent;
-			border-top: 18px solid $mainColor;
-			transform: rotate(45deg);
-			content: "";
-		}
+		@include profileTerm();
 	}
 	dd{
-		padding-left: 1em;
-		padding-bottom: 1.5em;
-		font-size: 1rem;
-		line-height: 1.3;
-		&:last-of-type{
-			padding-bottom: 0;
-		}
+		@include profileDescription();
 	}
 }
 
@@ -87,16 +47,20 @@
 		position: absolute;
 		left: 0;
 		top: 0;
+		margin-top: 0;
+		margin-bottom: 1em;
 		padding: .2em;
 		background-color: #fff;
-		margin-bottom: 1em;
 		font-size: fs(24);
 		transform: translate(.5em,-56%);
 		&::before{
 			display: inline-block;
 			position: relative;
 			top: 2px;
+			width: auto;
+			height: auto;
 			margin-right: .3em;
+			background-color: transparent;
 			color: $mainColor;
 			font-family: "ionicons";
 		}
@@ -119,6 +83,7 @@
 		}
 	}
 	ul{
+		margin: 0;
 		padding: p2v(60) p2v(40) p2v(50);
 		li{
 			padding-left: 1em;
@@ -136,19 +101,19 @@
 @media screen and (min-width:780px){
 	.about{
 		&__block{
-			display: flex;
-			flex-wrap: wrap;
 			margin-top: 80px;
-			&-profile{
+			&-row > .wp-block-group__inner-container{
 				display: flex;
+				flex-wrap: wrap;
+			}
+			&-profile .about__block-row > .wp-block-group__inner-container{
 				justify-content: space-between;
 			}
 			&-skill{
-				display: flex;
 				margin-top: 60px;
 			}
 		}
-		&__ttl{
+		.about__ttl{
 			width: 100%;
 			margin-bottom: 40px;
 			font-size: fs(32);
