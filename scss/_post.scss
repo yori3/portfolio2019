@@ -174,16 +174,15 @@
 	}
 
   .sub_contents{
+		display: flex;
+		flex-wrap: wrap;
     width: 93.75%;
     max-width: 960px;
-    margin: 0 auto;
-    font-size: 0;
+		margin: 0 auto;
   }
 
   .side_box{
-    display: inline-block;
     width: 48%;
-    vertical-align: top;
     &:nth-child(even){
       margin-left: 4%;
     }

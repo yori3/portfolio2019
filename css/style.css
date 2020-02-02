@@ -328,6 +328,15 @@ body {
   text-decoration: none;
 }
 
+.contents figcaption {
+  color: #666;
+  font-size: .85em;
+}
+
+.contents pre[class*="language-"] {
+  font-size: 0.85em;
+}
+
 .contents code:not([class*="language-"]) {
   padding: 0.2em;
   background-color: #333;
@@ -1326,15 +1335,14 @@ body {
     font-size: 1.25rem;
   }
   .sub_contents {
+    display: flex;
+    flex-wrap: wrap;
     width: 93.75%;
     max-width: 960px;
     margin: 0 auto;
-    font-size: 0;
   }
   .side_box {
-    display: inline-block;
     width: 48%;
-    vertical-align: top;
   }
   .side_box:nth-child(even) {
     margin-left: 4%;

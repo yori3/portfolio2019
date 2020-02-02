@@ -1,6 +1,8 @@
 <?php get_header(); ?>
 
 <main id="main" class="main">
+<?php if (have_posts()) : ?>
+<?php while (have_posts()) : the_post(); ?>
   <div class="kv kv_home">
     <h1 class="site_title"><?php bloginfo( 'name' ); ?><span class="sub_title"><?php bloginfo( 'description' ); ?></span></h1>
   </div>
@@ -8,12 +10,7 @@
   <section class="section about_sec fadeBlock" id="about">
     <div class="inner">
       <h2 class="cont_ttl"><span class="ttl_inner">About</span></h2>
-      <div class="about__lead">
-        <?php
-        $page = get_page_by_path('about');
-        echo apply_filters ( 'the_content', $page -> post_content );
-         ?>
-      </div>
+      <?php the_content(); ?>
 
       <div class="btn btn_more"><a href="<?php echo home_url(); ?>/about/" class="btn_body">詳しいプロフィールを見る</a></div>
     </div>
@@ -56,7 +53,8 @@
     </div>
   </section>
 
-
+<?php endwhile; ?>
+<?php endif; ?>
 </main>
 
 

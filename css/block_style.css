@@ -178,6 +178,15 @@ body {
   text-decoration: none;
 }
 
+.edit-post-visual-editor figcaption {
+  color: #666;
+  font-size: .85em;
+}
+
+.edit-post-visual-editor pre[class*="language-"] {
+  font-size: 0.85em;
+}
+
 .edit-post-visual-editor code:not([class*="language-"]) {
   padding: 0.2em;
   background-color: #333;
