@@ -41,36 +41,24 @@
 
 .side_box{
 	width: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 4em;
   text-align: center;
 	overflow: hidden;
-  #twitter-widget-0{
-    border: 1px solid $gray !important;
-    width: 93.75% !important;
-    max-width: 430px !important;
-  }
 	ul{
 		li{
-			&:first-child{
-				a{
-					border-top: 1px solid $gray;
-				}
-			}
 			a{
-				display: block;
+				display: flex;
+				align-items: center;
 			  position: relative;
-			  padding: 15px 5%;
-			  border-bottom: 1px solid $gray;
-			  font-size: 1rem;
-			  line-height: 1;
+			  padding: 1em;
+			  font-size: 1em;
+			  line-height: 1.3;
 			  text-align: left;
-			  &::after{
+			  &::before{
 			    display: block;
-			    position: absolute;
-			    right: 3%;
-			    top: 34%;
 			    width: 0;
-			    height: 0;
+					height: 0;
+					margin-right: 0.5em;
 			    border: 7px solid transparent;
 			    border-left: 7px solid $darkColor;
 					content: "";
@@ -175,6 +163,7 @@
 
   .sub_contents{
 		display: flex;
+		justify-content: space-between;
 		flex-wrap: wrap;
     width: 93.75%;
     max-width: 960px;
@@ -182,19 +171,15 @@
   }
 
   .side_box{
-    width: 48%;
-    &:nth-child(even){
-      margin-left: 4%;
-    }
+		flex-basis: 48%;
+		flex-shrink: 0;
     ul{
-      border-left: 1px solid $gray;
-      border-right: 1px solid $gray;
       li{
         transition: .3s;
         &:hover{
           background-color: $mainColor;
           color: #fff;
-          a::after{
+          a::before{
             border-left-color: #fff;
           }
         }

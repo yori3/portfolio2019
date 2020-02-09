@@ -13,8 +13,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link href="https://fonts.googleapis.com/css?family=Hind+Siliguri:400,600|Press+Start+2P|Orbitron:400,700|Poppins:400,600" rel="stylesheet">
-<link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Hind+Siliguri:400,600|Noto+Sans+JP:400,700|Poppins:400,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.3.1/dist/css/yakuhanjp.min.css">
 <?php
 if(is_front_page()){
   $title = 'WeST -yori3&#039;s portfolio-';
@@ -30,12 +30,21 @@ if(is_front_page()){
 ?>
 <meta name="description" content="<?php echo $description; ?>">
 
+<?php
+global $post;
+if (has_post_thumbnail()){
+  $ogimage = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'large')[0];
+}else{
+  $ogimage = get_template_directory_uri().'/images/ogp.jpg';
+}
+
+?>
 <meta property="og:type" content="website">
 <meta property="og:url" content="<?php echo home_url();?>">
 <meta property="og:site_name" content="<?php bloginfo( 'name' ); ?>">
 <meta property="og:title" content="<?php echo $title; ?>">
 <meta property="og:description" content="<?php echo $description; ?>">
-<meta property="og:image" content="<?php echo get_template_directory_uri()?>/images/ogp.jpg">
+<meta property="og:image" content="<?php echo $ogimage ?>">
 
 <?php wp_head(); ?>
 </head>

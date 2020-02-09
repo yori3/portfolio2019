@@ -20,9 +20,10 @@
 }
 
 .cont_ttl{
-  margin-bottom: 30px;
+	margin-bottom: 1em;
+	padding: 0 .5em;
 	color: $darkColor;
-	font-size: fs(32);
+	font-size: 2em;
 	line-height: 1.3;
 	font-family: $enFont;
   text-align: center;
@@ -159,8 +160,8 @@
   }
 
   .cont_ttl{
-    margin-bottom: 60px;
-    font-size: fs(40);
+    margin-bottom: 1.5em;
+    font-size: 2.5em;
   }
 
 	.btn{
