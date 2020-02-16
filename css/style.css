@@ -1466,6 +1466,22 @@ body {
   padding-bottom: 3px;
 }
 
+.post__tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.post__tagsItem {
+  display: inline-block;
+  margin-right: .5em;
+  margin-top: 1em;
+  padding: .1em 1em;
+  background-color: #f5f5f5;
+  border-radius: 50px;
+  color: #666;
+  font-size: 0.75rem;
+}
+
 @media screen and (min-width: 780px) {
   .post_area {
     margin-bottom: 100px;

@@ -19,13 +19,25 @@ if (have_posts()) :
   <div class="post_header_inner">
     <h1 class="article_ttl post_ttl"><?php the_title(); ?></h1>
     <time class="article_date post_date"><?php echo get_the_date(); ?></time>
+
+    <?php if(get_the_tags() != ""){ ?>
+    <div class="post__tags">
+      <?php
+        $tagList = get_the_tags();
+        foreach($tagList as $tags){
+          echo '<span class="post__tagsItem">'. $tags->name .'</span>';
+        }
+      ?>
+    </div>
+    <?php } ?>
+
+
   </div>
 </div>
 
 <div class="post_content contents">
   <?php the_content(); ?>
 </div>
-
 
 <?php
   endwhile;
