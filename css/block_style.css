@@ -169,6 +169,40 @@ body {
   line-height: 1.75;
 }
 
+.edit-post-visual-editor li:not([class]) {
+  position: relative;
+  padding-left: 1em;
+}
+
+.edit-post-visual-editor li:not([class]) + li {
+  margin-top: .75em;
+}
+
+.edit-post-visual-editor ul li:not([class])::before {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: .6em;
+  width: .5em;
+  height: .5em;
+  border-radius: 50%;
+  background-color: #333;
+  content: "";
+}
+
+.edit-post-visual-editor ol {
+  counter-reset: orderlist;
+}
+
+.edit-post-visual-editor ol li:not([class])::before {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  counter-increment: orderlist;
+  content: counter(orderlist) ".";
+}
+
 .edit-post-visual-editor a {
   color: #3F87AA;
   text-decoration: underline;

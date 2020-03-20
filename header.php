@@ -39,12 +39,12 @@ if (has_post_thumbnail()){
 }
 
 ?>
-<meta property="og:type" content="website">
-<meta property="og:url" content="<?php echo home_url();?>">
-<meta property="og:site_name" content="<?php bloginfo( 'name' ); ?>">
-<meta property="og:title" content="<?php echo $title; ?>">
-<meta property="og:description" content="<?php echo $description; ?>">
-<meta property="og:image" content="<?php echo $ogimage ?>">
+<!-- <meta property="og:type" content="website">
+<meta property="og:url" content="<?php //echo home_url();?>">
+<meta property="og:site_name" content="<?php //bloginfo( 'name' ); ?>">
+<meta property="og:title" content="<?php //echo $title; ?>">
+<meta property="og:description" content="<?php //echo $description; ?>">
+<meta property="og:image" content="<?php //echo $ogimage ?>"> -->
 
 <?php wp_head(); ?>
 </head>

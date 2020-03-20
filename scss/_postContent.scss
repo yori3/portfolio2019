@@ -49,6 +49,39 @@ p,ul,ol{
 	font-size: 1em;
 	line-height: 1.75;
 }
+li:not([class]){
+	position: relative;
+	padding-left: 1em;
+	&+li{
+		margin-top: .75em;
+	}
+}
+ul li:not([class]){
+	&::before{
+		display: block;
+		position: absolute;
+		left: 0;
+		top: .6em;
+		width: .5em;
+		height: .5em;
+		border-radius: 50%;
+		background-color: $black;
+		content: "";
+	}
+}
+ol{
+	counter-reset: orderlist;
+	li:not([class]){
+	&::before{
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		counter-increment: orderlist;
+		content: counter(orderlist)".";
+	}
+}
+}
 a{
 	color: $linkColor;
 	text-decoration: underline;
