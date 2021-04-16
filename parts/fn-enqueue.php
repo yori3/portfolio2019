@@ -24,7 +24,7 @@ function mypage_scripts(){
 	wp_css('style');
 
 	wp_deregister_script('jquery');
-	wp_enqueue_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js','', '20170716', false );
+	wp_enqueue_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js','', '20170716', false );
 	wp_enqueue_script( '', '//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js','', '', true );
 
 	if(is_single()){
