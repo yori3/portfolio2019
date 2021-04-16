@@ -122,3 +122,49 @@ add_action( 'enqueue_block_editor_assets', 'add_my_assets_to_block_editor' );
 
 
 get_template_part('parts/fn-breadcrumb');
+
+/**
+ * ブロックパターン・カテゴリ削除サンプル
+ *
+ * WordPress5.5 RC1
+ * License: GPLv2
+ */
+function nendebcom_unregister_block_pattern(){
+
+    //ブロックパターン
+    unregister_block_pattern( 'core/text-two-columns' );
+    unregister_block_pattern( 'core/two-buttons' );
+    unregister_block_pattern( 'core/two-images' );
+    unregister_block_pattern( 'core/text-two-columns-with-images' );
+    unregister_block_pattern( 'core/text-three-columns-buttons' );
+    unregister_block_pattern( 'core/large-header' );
+    unregister_block_pattern( 'core/large-header-button' );
+    unregister_block_pattern( 'core/three-buttons' );
+    unregister_block_pattern( 'core/heading-paragraph' );
+    unregister_block_pattern( 'core/quote' );
+
+    //ブロックパターンカテゴリ
+    unregister_block_pattern_category( 'buttons' );
+    unregister_block_pattern_category( 'columns' );
+    unregister_block_pattern_category( 'gallery' );
+    unregister_block_pattern_category( 'header' );
+    unregister_block_pattern_category( 'text' );
+}
+add_action( 'init', 'nendebcom_unregister_block_pattern' );
+
+
+function original_my_block_pattern(){
+    register_block_pattern(
+        'original/my-block-pattern',   //ブロックパターン名 namespace/block-pattern-name
+        array(
+            'title'   => '画像＋テキスト',
+            'content' => '
+            <!-- wp:media-text {"mediaId":777,"mediaLink":"http://west.local/map_open/","mediaType":"image","className":"mediaGroup"} -->
+            <div class="wp-block-media-text is-stacked-on-mobile mediaGroup"><figure class="wp-block-media-text__media"><img src="http://west.local/wp-content/uploads/2018/10/map_open.png" alt="" class="wp-image-777"/></figure><div class="wp-block-media-text__content"><!-- wp:paragraph {"placeholder":"コンテンツ…"} -->
+            <p>テキストテキストテキストテキストテキストテキストテキストテキスト</p>
+            <!-- /wp:paragraph --></div></div>
+            <!-- /wp:media-text -->',
+        )
+    );
+}
+add_action( 'init', 'original_my_block_pattern' );
