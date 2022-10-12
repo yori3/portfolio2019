@@ -1,0 +1,20 @@
+name: deploy
+on:
+  push:
+    branches: [master]
+jobs:
+  web-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get lastest code
+        uses: actions/checkout@v3
+      - name: sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: /dist/
+          server-dir: /home/yori3/yori3.com/public_html/blog/wp-content/themes/bolg_new
+          protocol: ftps
+          port: 10022
