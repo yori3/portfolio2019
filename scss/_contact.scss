@@ -1,3 +1,5 @@
+@use '_config' as *;
+
 //お問い合わせ
 .form{
 	&_inner{
@@ -37,7 +39,9 @@
 			}
 		}
 		textarea{
-			@extend input[type="text"];
+			padding: 0.5em;
+			border: 1px solid $blueGray;
+			border-radius: 5px;
 			width: 100%;
 			height: 10em;
 		}

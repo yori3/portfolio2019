@@ -1,3 +1,5 @@
+@use '_config' as *;
+@use "_worksContent" as wc;
 //実績
 .works{
 	&__item{
@@ -29,7 +31,7 @@
 
 	&__content{
 		font-size: 1rem;
-		@import "_worksContent";
+		@include wc.workContent();
 	}
 
 }

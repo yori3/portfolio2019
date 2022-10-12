@@ -1,19 +1,20 @@
-@charset "utf-8";
 
-@import "_config";
-@import "_base";
+@use "_config" as *;
+@use "_base";
+@use "_worksContent" as wc;
+@use "_postContent" as pc;
 
 @font-face {
   font-family: 'ionicons';
   src: url('//code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.woff');
 }
 
-@import "_worksContent";
+@include wc.workContent();
 
 .edit-post-visual-editor{
   font-family: 'Hind Siliguri', "Noto Sans Japanese", sans-serif !important;
 
-  @import "_postContent";
+  @include pc.postContent();
 
   .editor-post-title__block{
     background-image: linear-gradient(to bottom, rgba($bgColor,0) 0%, rgba($bgColor,0) 45%, $bgColor 100%);
@@ -54,21 +55,21 @@
     }
 
     [data-type="custom/term"]{
-      @include termLayout();
+      @include wc.termLayout();
       padding: 0;
     }
     .wp-block-custom-term{
       flex-basis: 100%;
-      @include termStyle();
+      @include wc.termStyle();
     }
 
     [data-type="custom/description"]{
-      @include descriptionLayout();
+      @include wc.descriptionLayout();
       padding: 0;
     }
     .wp-block-custom-description{
       flex-basis: 100%;
-      @include descriptionStyle();
+      @include wc.descriptionStyle();
     }
   }
 

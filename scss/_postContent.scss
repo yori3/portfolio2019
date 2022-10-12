@@ -1,3 +1,7 @@
+@use '_config' as *;
+
+@mixin postContent(){
+
 h2{
 	position: relative;
 	margin-top: 2em;
@@ -123,4 +127,7 @@ code:not([class*="language-"]){
 	&::-webkit-scrollbar-thumb{
 		background:#666;
 	}
+}
+
+
 }

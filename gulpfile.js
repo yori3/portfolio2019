@@ -1,11 +1,18 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+const dartSass = require('gulp-dart-sass');
 var autoprefixer = require('gulp-autoprefixer');
+
+const paths = {
+  scss: {
+    src: 'scss/*.scss', // コンパイル対象
+    dest: './css/' // 出力先
+  }
+}
 
 gulp.task('sass', done => {
   gulp.src('./scss/*.scss')
-  .pipe(sass({outputStyle: 'expanded'}))
-  .pipe(gulp.dest('./css/'))
+  .pipe(dartSass({outputStyle: 'expanded'}))
+  .pipe(gulp.dest(paths.scss.dest))
   .pipe(autoprefixer({
     browsers: ['last 2 versions'],
   }))

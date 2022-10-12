@@ -31,11 +31,11 @@
     "babel-preset-react": "^6.24.1",
     "babel-watch": "^7.0.0",
     "gulp-autoprefixer": "^6.0.0",
-    "gulp-sass": "^4.0.2",
     "webpack": "^4.29.6"
   },
   "dependencies": {
     "gulp": "^4.0.0",
+    "gulp-dart-sass": "^1.0.2",
     "merge-stream": "^2.0.0"
   }
 }

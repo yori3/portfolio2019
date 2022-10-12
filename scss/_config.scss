@@ -55,26 +55,13 @@ $enFont: 'Poppins', sans-serif;
 	display: inline-block;
 	position: relative;
 	margin-bottom: 10px;
-	padding: .2em .5em;
+	padding: .4em 1em .25em .5em;
 	background-color: $mainColor;
+	border-radius: 0 5rem 0 0;
 	color: #fff;
 	font-size: fs(18);
 	font-weight: bold;
 	line-height: 1;
-	&::after{
-		display: block;
-		position: absolute;
-		left: auto;
-		top: auto;
-		right: -18px;
-		bottom: -18px;
-		width: 0;
-		height: 0;
-		border: 18px solid transparent;
-		border-top: 18px solid $mainColor;
-		transform: rotate(45deg);
-		content: "";
-	}
 }
 @mixin profileDescription(){
 	padding-left: 1em;
