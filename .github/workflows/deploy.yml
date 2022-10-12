@@ -16,5 +16,3 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: /home/yori3/yori3.com/public_html/blog/wp-content/themes/bolg_new/
-          protocol: ftps
-          port: 10022
